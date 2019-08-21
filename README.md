@@ -15,3 +15,4 @@ Projeto da disciplina (IF977) Engenharia de Software, do curso de graduação em
 - [José Tomáz](https://github.com/jtomaz99) (Scrum Master e Desenvolvedor)
 - [Victor Santos](https://github.com/vgss) (Product Owner e Desenvolvedor)
 - [Vitor Lima](https://github.com/vitorlima-vl) (Desenvolvedor e Tester)
+- [Giovanni Correa](https://github.com/gecjcin/gecj.git) (Desenvolvedor e tester)
