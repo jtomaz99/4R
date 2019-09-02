@@ -1,4 +1,4 @@
-# :four_leaf_clover:*4R*
+[Logo](https://github.com/jtomaz99/4R/blob/master/Itera%C3%A7%C3%B5es/Itera%C3%A7%C3%A3o%200/%5B0-4%5D%20Logo.png):*4R*
 Projeto da disciplina (IF977) Engenharia de Software, do curso de graduação em Sistemas de Informação do Centro de Informática da Universidade Federal de Pernambuco (UFPE).
 
 ## :computer: Equipe
