@@ -23,7 +23,7 @@ Para que eu possa solicitar e/ou oferecer itens.
 ```
 4#
 Como um usuário
-Eu quero mudar minha senha
+Eu quero recuperar minha senha
 Para que eu tenha garantia de acesso
 ```
 
@@ -47,7 +47,7 @@ Para que eu possa verificar se desejo atender a solicitação
 ```
 3#
 Como um usuário - fornecedor
-Eu quero ver itens solicitados 
+Eu quero ver as solicitações dos meus itens anunciados 
 Para que eu possa aprovar ou recusar a solicitação
 ```
 
@@ -63,7 +63,7 @@ Eu quero solicitar um item
 Para que eu possa mostrar interesse
 ```
 ```
-3#
+2#
 Como um usuário - solicitante
 Eu quero receber um email com a resposta da minha solicitação 
 Para que eu fique ciente se a solicitação foi aprovada ou recusada
