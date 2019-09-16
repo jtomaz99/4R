@@ -14,11 +14,11 @@ test:
   host: dbtest
   database: fourr_test
 
-# production:
-#   adapter: postgis
-#   encoding: unicode
-#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 30 } %>
-#   postgis_extension: postgis
-#   schema_search_path: public,postgis
-#   url: <%= ENV.fetch('DATABASE_URL', '').sub(/^postgres/, "postgis") %>
+production:
+  adapter: postgis
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 30 } %>
+  postgis_extension: postgis
+  schema_search_path: public,postgis
+  url: <%= ENV.fetch('DATABASE_URL', '').sub(/^postgres/, "postgis") %>
 
