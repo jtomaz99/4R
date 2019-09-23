@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
+import logo from './assets/logo.svg';
 import './App.css';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faCheckCircle, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
