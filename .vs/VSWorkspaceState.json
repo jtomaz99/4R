@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\FOURR",
+    "\\FOURR\\app",
+    "\\FOURR\\app\\controllers",
+    "\\FOURR\\app\\models",
+    "\\FOURR\\app\\views",
+    "\\FOURR\\spec",
+    "\\FOURR\\spec\\controllers"
+  ],
+  "SelectedNode": "\\FOURR\\spec\\rails_helper.rb",
+  "PreviewInSolutionExplorer": false
+}
