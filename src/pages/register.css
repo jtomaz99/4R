@@ -12,7 +12,7 @@
     flex-direction: column; /* Elementos um abaixo do outro */
 }
 
-.login-container img{
+.login-container form img{
     margin-bottom: 60px;
 }
 
@@ -50,4 +50,28 @@
 .login-container h5{
     display: flex;
     justify-content: center;
+}
+
+.rect1{
+    position: absolute;
+    left: 0px;
+    top: 550px;
+}
+
+.rect2{
+    position: absolute;
+    left: -20px;
+    top: -30px;
+}
+
+.rect3{
+    position: absolute;
+    top: 650px;
+    right: 0px;    
+}
+
+.rect4{
+    position: absolute;
+    top: -30px;
+    right: 0px;
 }
