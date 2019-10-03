@@ -20,7 +20,7 @@ export default function Register({ history }) {
     async function handleSubmit(e) {
         e.preventDefault();
 
-        const response = await api.post('https://fourr-api.herokuapp.com', {
+        const response = await api.post('/register', {
             username,
             lastname,
             email,
