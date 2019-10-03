@@ -9,21 +9,28 @@ import retangulo3 from '../assets/Rectangle2.3.svg';
 import retangulo4 from '../assets/Rectangle2.svg';
 
 export default function Register({ history }) {
-    const [username, lastname, email, password,passwordconfirmation, setUsername, setLastname, setEmail, setPassword] = useState('');
+    const [username, setUsername] = useState('');
+    const [lastname, setLastname] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [passwordconfirmation, setPasswordConfirmation] = useState('');
 
-//    async function handleSubmit(e) {
-//        e.preventDefault();
 
-//        const response = await api.post('/devs', {
-//            username,
-//            lastname,
-//            password,
-//        });
 
-//        const { _id } = response.data;
+    async function handleSubmit(e) {
+        e.preventDefault();
 
-//        history.push(`/dev/${_id}`);
-//    }
+        const response = await api.post('https://fourr-api.herokuapp.com', {
+            username,
+            lastname,
+            email,
+            password,
+        });
+
+        const { _id } = response.data;
+
+        history.push(`/${_id}`);
+    }
 
     return(
         <div className="login-container">
@@ -31,17 +38,17 @@ export default function Register({ history }) {
             <div className="rect2"><img src={retangulo2} alt="RetanguloSuperiorEsquerdo" /></div>
             <div className="rect3"><img src={retangulo3} alt="RetanguloInferiorDireito" /></div>
             <div className="rect4"><img src={retangulo4} alt="RetanguloSuperiorDireito" /></div>       
-            <form onSubmit=''>
+            <form onSubmit={handleSubmit}>
                 <img src={logo} alt="FOURR"/>
                 <h5><b>Crie sua conta</b></h5>
                 <input placeholder="Nome"
-                    value={username}
-                    onChange={e => setUsername(e.target.value)}
+                value={username}
+                onChange={e => setUsername(e.target.value)}
                 />
 
                 <input placeholder="Sobrenome"
-                    value={lastname}
-                    onChange={e => setLastname(e.target.value)}
+                value={lastname}
+                onChange={e => setLastname(e.target.value)}
                 />
 
                 <input placeholder="E-Mail"
@@ -50,13 +57,13 @@ export default function Register({ history }) {
                 />
 
                 <input placeholder="Senha"
-                value={password}
-                onChage={e => setPassword(e.target.value)}
+                value={password} type="password"
+                onChange={e => setPassword(e.target.value)}
                 />
 
                 <input placeholder="Confirme sua senha"
-                value={passwordconfirmation}
-                onChange={e => setPassword(e.target.value)}
+                value={passwordconfirmation} type="password"
+                onChange={e => setPasswordConfirmation(e.target.value)}
                 />
                 <button type="submit">Entrar</button>
             </form>
