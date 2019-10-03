@@ -1,37 +1,46 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './login.css';
 
-validateForm() {
-    return this.state.email.length > 0 && this.state.password.length > 0;
- }
 
-handleChange(event) {
-    this.setState({value: event.target.value});
-}
 
-handleSubmit = event => {
-    event.preventDefault();
-}
+export default function Register({ history }) {
+    const [email, password] = useState('');
 
-  
-function login(){
+//    async function handleSubmit(e) {
+//        e.preventDefault();
+
+//        const response = await api.post('/devs', {
+//            username,
+//            lastname,
+//            password,
+//        });
+
+//        const { _id } = response.data;
+
+//        history.push(`/dev/${_id}`);
+//    }
+
     return(
-        <form onSubmit={this.handleSubmit}>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" value={this.state.email} onChange={this.handleChange}>
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Senha</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" >
-          </div>
-          <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-          </div>
-          <button type="submit" class="btn btn-success">Login</button>
-    
-        </form>    
-    )
+        <div className="login-container">
+            
+                   
+            <form onSubmit=''>
+                
+                <h5><b>Entre com sua Conta</b></h5>
+                
+
+                <input placeholder="E-Mail"
+                value={email}
+                
+                />
+
+                <input placeholder="Senha"
+                value={password}
+                
+                />
+
+                <button type="submit">Entrar</button>
+            </form>
+        </div>
+    );
 }
-export default login ;
