@@ -20,7 +20,7 @@ export default function Register({ history }) {
     async function handleSubmit(e) {
         e.preventDefault();
 
-        const response = await api.post('/register', {
+        const response = await api.post('/', {
             username,
             lastname,
             email,
