@@ -22,5 +22,11 @@ O [4R](https://github.com/jtomaz99/4R) é uma aplicação Web que possibilita os
 
 Esse projeto tem como objetivo *replanejar* o fluxo atual de descarte e compra de *recursos* para que a própria instituição possa *reutilizá-los* a fim de *reduzir gastos*. As 4 palavras chaves, todas começando com R, representam bem essa proposta.
 
+## :eye: Observações
+
+Houveram algumas mudanças na estrutura do projeto, sendo ela a separação do github do BackEnd para um projeto. A nova [Aplicação Backend](https://github.com/vitorlima-vl/FOURR-API) já está online no heroku, assim como o Front-End e podem ser visualizadas no seguintes links
+- [4R](https://fourr.herokuapp.com/)
+- [4R-API](https://fourr-api.herokuapp.com/)
+
 ## :clock10: Atas de Reunião
 - [Link das Atas](https://github.com/jtomaz99/ES-Project/wiki/Atas-de-Reuni%C3%A3o).
