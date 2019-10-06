@@ -27,7 +27,7 @@ export default class Login extends Component {
         const {email,password} = this.state;
         
         axios.post(
-            "https://fourrcorsproxy.herokuapp.com/http://localhost:3000/sessions/", 
+            "http://fourr-api.herokuapp.com/sessions/", 
             {departamento:{email: email,password: password}},
             {withCredentials: true}
         ).then(response => {

@@ -31,7 +31,7 @@ export default class Register extends Component {
         const {email,password,nome,password_confirmation} = this.state;
         
         axios.post(
-            "https://fourrcorsproxy.herokuapp.com/http://localhost:3000/registrations/", {
+            "http://fourr-api.herokuapp.com/registrations/", {
             departamento:{nome_depto: nome,email: email,password: password,password_confirmation: password_confirmation}},
             {withCredentials: true}
         ).then(response => {
