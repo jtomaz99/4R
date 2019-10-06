@@ -1,53 +1,74 @@
-import React, { useState } from 'react';
-import './login.css';
-
-import api from '../services/apiService';
+import React, { Component } from 'react';
+import './register.css';
+import axios from 'axios';
 import logo from '../assets/logo.svg';
-import retangulo1 from '../assets/Rectangle2.1.svg';
-import retangulo2 from '../assets/Rectangle2.2.svg';
-import retangulo3 from '../assets/Rectangle2.3.svg';
-import retangulo4 from '../assets/Rectangle2.svg';
+import Retangulos from '../components/retangulos.js'
 
-export default function Register({ history }) {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+export default class Login extends Component {
+    constructor(props) {
+        super(props);
 
-    async function handleSubmit(e) {
-        e.preventDefault();
+        this.state = {
+            email: "",
+            password: "",
+        }
 
-        const response = await api.post('/', {
-            email,
-            password,
-        });
-
-        const { _id } = response.data;
-
-        history.push(`/${_id}`);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
 
-    return(
-        <div className="login-container">
-            <div className="rect1"><img src={retangulo1} alt="RetanguloInferiorEsquerdo" /></div>
-            <div className="rect2"><img src={retangulo2} alt="RetanguloSuperiorEsquerdo" /></div>
-            <div className="rect3"><img src={retangulo3} alt="RetanguloInferiorDireito" /></div>
-            <div className="rect4"><img src={retangulo4} alt="RetanguloSuperiorDireito" /></div>        
-            <form onSubmit={handleSubmit}>
-                <img src={logo} alt="FOURR"/>
-                <h5><b>Entre com sua Conta</b></h5>
-                
+    handleChange(event){
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+    }
 
-                <input placeholder="E-Mail"
-                value={email}
-                onChange={e => setEmail(e.target.value)}
-                />
+    handleSubmit(event) {
+        const {email,password} = this.state;
+        
+        axios.post(
+            "https://fourrcorsproxy.herokuapp.com/http://localhost:3000/sessions/", 
+            {departamento:{email: email,password: password}},
+            {withCredentials: true}
+        ).then(response => {
+            console.log("Login resposta", response);
+        }).catch(error => {
+            console.log("error message",error)
+        })
+        
+        event.preventDefault();
 
-                <input placeholder="Senha"
-                value={password}
-                onChange={e => setPassword(e.target.value)}
-                />
+    }
 
-                <button type="submit">Entrar</button>
-            </form>
-        </div>
-    );
+    render () {
+
+        return(
+            <div className="login-container">
+                <Retangulos />    
+                <form onSubmit={this.handleSubmit}>
+                    <img src={logo} alt="FOURR"/>
+                    <h5><b>Entre com sua conta</b></h5>
+                    
+                    <input 
+                    placeholder="E-Mail"
+                    name= "email"
+                    value={this.state.email}
+                    type="email"
+                    onChange={this.handleChange}
+                    required
+                    />
+
+                    <input 
+                    placeholder="Senha"
+                    name= "password"
+                    value={this.state.password}
+                    type="password"
+                    onChange={this.handleChange}
+                    required
+                    />
+                    <button type="submit">Entrar</button>
+                </form>
+            </div>
+        );
+    }
 }
