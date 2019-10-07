@@ -13,7 +13,7 @@ export default class Routes extends Component {
 		this.state = {
 			logged_in: "não_logado",
 			departamento: {}
-		}
+		};
 		
 		this.handeLogin = this.handleLogin.bind(this);
 	}
