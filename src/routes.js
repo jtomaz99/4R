@@ -23,7 +23,7 @@ export default class Routes extends Component {
 				logged_in: "logado",
 				user: data.user
 			})
-			console.log(logged_in)
+			console.log(this.logged_in)
 		}
 	
     render() {

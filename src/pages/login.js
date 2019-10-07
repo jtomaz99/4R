@@ -41,7 +41,7 @@ export default class Login extends Component {
             {departamento:{email: email,password: password}},
             {withCredentials: true}
         ).then(response => {
-			console.log('passou, alterando status login');
+			console.log(response.data.status);
 			if (response.data.status === 'created'){
             this.loginSucesso(response.data);
 			}
