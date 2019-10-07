@@ -14,7 +14,7 @@ export default class Routes extends Component {
 			logged_in: "não_logado",
 			user: {}
 		}
-		this.handleLogin.bind(this);
+		this.handeLogin = this.handleLogin.bind(this);
 	}
 	
 	handleLogin(data) {

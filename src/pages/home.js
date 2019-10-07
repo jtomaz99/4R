@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './main.css';
-import axios from 'axios';
 import logo from '../assets/logo.svg';
 
 export default class Home extends Component {
