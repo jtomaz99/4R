@@ -14,14 +14,16 @@ export default class Routes extends Component {
 			logged_in: "não_logado",
 			user: {}
 		}
-		this.handleLogin.bind(this);	
+		this.handleLogin.bind(this);
 	}
 	
 	handleLogin(data) {
+			console.log("alterando estado")
 			this.setState({
 				logged_in: "logado",
 				user: data.user
 			})
+			console.log(logged_in)
 		}
 	
     render() {
