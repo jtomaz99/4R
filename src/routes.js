@@ -18,12 +18,12 @@ export default class Routes extends Component {
 	}
 	
 	handleLogin(data) {
-			console.log(this.logged_in)
+			console.log(this.logged_in,user)
 			this.setState({
 				logged_in: "logado",
 				user: data.user
 			})
-			console.log(this.logged_in)
+			console.log(this.logged_in,user)
 		}
 	
     render() {
