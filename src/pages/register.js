@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './register.css';
+import './main.css';
 import axios from 'axios';
 import logo from '../assets/logo.svg';
 import Retangulos from '../components/retangulos.js'
@@ -31,7 +31,7 @@ export default class Register extends Component {
         const {email,password,nome,password_confirmation} = this.state;
         
         axios.post(
-            "http://fourr-api.herokuapp.com/registrations/", {
+            "https://fourr-api.herokuapp.com/registrations/", {
             departamento:{nome_depto: nome,email: email,password: password,password_confirmation: password_confirmation}},
             {withCredentials: true}
         ).then(response => {

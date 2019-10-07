@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './register.css';
+import './main.css';
 import axios from 'axios';
 import logo from '../assets/logo.svg';
 import Retangulos from '../components/retangulos.js'
@@ -27,7 +27,7 @@ export default class Login extends Component {
         const {email,password} = this.state;
         
         axios.post(
-            "http://fourr-api.herokuapp.com/sessions/", 
+            "https://fourr-api.herokuapp.com/sessions/", 
             {departamento:{email: email,password: password}},
             {withCredentials: true}
         ).then(response => {
