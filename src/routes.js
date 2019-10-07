@@ -3,6 +3,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 
 import Login from './pages/login';
 import Register from './pages/register';
+import Home from './pages/home'
 
 
 export default class Routes extends Component {
@@ -10,7 +11,7 @@ export default class Routes extends Component {
 		super();
 
 		this.state = {
-			logged_in: false,
+			logged_in: "não_logado",
 			user: {}
 		}
 	}
