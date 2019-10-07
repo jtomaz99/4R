@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './register.css';
+import './main.css';
 import axios from 'axios';
 import logo from '../assets/logo.svg';
 import Retangulos from '../components/retangulos.js'
