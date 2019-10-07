@@ -58,7 +58,7 @@
 .rect1{
     position: absolute;
     left: 0px;
-    top: 72%;
+    top: 100%;
 }
 
 .rect2{
@@ -69,7 +69,7 @@
 
 .rect3{
     position: absolute;
-    top: 86%;
+    top: 114%;
     right: 0px;    
 }
 
