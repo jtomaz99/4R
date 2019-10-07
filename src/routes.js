@@ -20,12 +20,12 @@ export default class Routes extends Component {
 	
 	handleLogin(data) {
 			console.log(data)
-			console.log(logged_in,departamento)
+			console.log(this.logged_in,this.departamento)
 			this.setState({
-				logged_in: "logado",
-				departamento: data.departamento
+				this.logged_in: "logado",
+				this.departamento: data.departamento
 			});
-			console.log(logged_in,departamento)
+			console.log(this.logged_in,this.departamento)
 			
 		}
 	
