@@ -14,7 +14,16 @@ export default class Routes extends Component {
 			logged_in: "não_logado",
 			user: {}
 		}
+		this.handleLogin.bind(this);	
 	}
+	
+	handleLogin(data) {
+			this.setState({
+				logged_in: "logado",
+				user: data.user
+			})
+		}
+	
     render() {
     	return (
 	        <BrowserRouter>
@@ -22,7 +31,7 @@ export default class Routes extends Component {
 	            	path='/' 
 	            	exact 
 	            	render={props => (
-	            		<Login {... props} logged_in={this.state.logged_in} />
+	            		<Login {... props} handleLogin = {this.handleLogin.bind(this)} logged_in={this.state.logged_in} />
 	            		)}
 
 	            	/>
