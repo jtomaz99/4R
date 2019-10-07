@@ -10,7 +10,7 @@ export default class Home extends Component {
         return(
             <div>
             <img src={logo} alt="FOURR"/>
-            <h1>Bem vindo,{this.props.logged_in}</h1>
+            <h1>Bem vindo</h1>
             </div>
         );
     }
