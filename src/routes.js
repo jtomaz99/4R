@@ -48,6 +48,14 @@ export default class Routes extends Component {
 							<Register {... props} logged_in={this.state.logged_in} />
 							)}
 						/>
+					<Route 
+						path='/home' 
+						exact 
+						render={props => (
+							<Home {... props} logged_in={this.state.logged_in} />
+							)}
+
+						/>
 				</Switch>
 	        </BrowserRouter>
     	);
