@@ -21,7 +21,6 @@ export default class Login extends Component {
     }
 
 	loginSucesso(data){
-		console.log(this.props)
 		this.props.handleLogin(data);
 		this.props.history.push("/home");
 	}
@@ -41,7 +40,6 @@ export default class Login extends Component {
             {departamento:{email: email,password: password}},
             {withCredentials: true}
         ).then(response => {
-			console.log('passou, alterando status login');
 			if (response.data.status === 'created'){
             this.loginSucesso(response.data);
 			}
