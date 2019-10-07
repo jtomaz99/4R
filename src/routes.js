@@ -18,7 +18,6 @@ export default class Routes extends Component {
 	}
 	
 	handleLogin(data) {
-			console.log("alterando estado")
 			this.setState({
 				logged_in: "logado",
 				user: data.user
