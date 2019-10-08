@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import './main.css';
 import axios from 'axios';
+
+import './main.css';
 import logo from '../assets/logo.svg';
 import Retangulos from '../components/retangulos.js'
 
