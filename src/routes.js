@@ -25,7 +25,7 @@ export default class Routes extends Component {
 		axios
 			.get("https://fourr-api.herokuapp.com/logged_in", { withCredentials: true })
 			.then(response => {
-				console.log(response)
+			console.log(response)}
 			)
 			.catch(error =>{
 				console.log("check login error",error);
