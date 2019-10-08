@@ -21,11 +21,7 @@ export default class Home extends Component {
 				console.log("erro logout",error)
 			})		
 		
-	}
-	
-	componentDidMout(){
-		this.props.loginStatus();
-	}
+	}	
 	
     render () {
         return(
