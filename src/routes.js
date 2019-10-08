@@ -25,11 +25,7 @@ export default class Routes extends Component {
 		axios
 			.get("https://fourr-api.herokuapp.com/logged_in", { withCredentials: true })
 			.then(response => {
-				if (response.data.logged_in && this.state.logged_in === "nao_logado")
-					console.log(response)
-				else if (!response.data.logged_in && this.state.logged_in === "logado" )
-					console.log(response)
-				}
+				console.log(response)
 			)
 			.catch(error =>{
 				console.log("check login error",error);
