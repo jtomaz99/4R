@@ -26,10 +26,7 @@ export default class Routes extends Component {
 			.get("https://fourr-api.herokuapp.com/logged_in", { withCredentials: true })
 			.then(response => {
 				if (response.data.logged_in && this.state.logged_in === "nao_logado")
-					this.setState({
-						logged_in: "logado",
-						departamento: response.data.departamento 
-					})
+					console.log(response.data.departamento)
 				else if (!response.data.logged_in && this.state.logged_in === "logado" )
 					this.setState({
 						logged_in: "nao_logado",
@@ -91,7 +88,8 @@ export default class Routes extends Component {
 							<Home {... props} 
 								logged_in = {this.state.logged_in}
 								departamento={this.state.departamento} 
-								handleLogout = {this.handleLogout.bind(this)}/>
+								handleLogout = {this.handleLogout.bind(this)}
+								loginStatus = {this.loginStatus.bind(this)}/>
 							)}
 
 						/>

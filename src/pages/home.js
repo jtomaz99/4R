@@ -22,6 +22,11 @@ export default class Home extends Component {
 			})		
 		
 	}
+	
+	componentDidMout(){
+		this.props.loginStatus();
+	}
+	
     render () {
         return(
             <div>
