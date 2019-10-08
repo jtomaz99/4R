@@ -25,15 +25,18 @@ export default class Routes extends Component {
 		axios
 			.get("https://fourr-api.herokuapp.com/logged_in", { withCredentials: true })
 			.then(response => {
-			console.log(response)}
+				if (response.data.logged_in && this.state.logged_in === "nao_logado")
+					console.log(response.data.departamento)
+				else if (!response.data.logged_in && this.state.logged_in === "logado" )
+					this.setState({
+						logged_in: "nao_logado",
+						departamento: {}
+					})
+				}
 			)
 			.catch(error =>{
 				console.log("check login error",error);
 			});
-	}
-	
-	componentDidMount(){
-		this.loginStatus();
 	}
 	
 	handleLogin(data) {
@@ -81,8 +84,7 @@ export default class Routes extends Component {
 							<Home {... props} 
 								logged_in = {this.state.logged_in}
 								departamento={this.state.departamento} 
-								handleLogout = {this.handleLogout.bind(this)}
-								loginStatus = {this.loginStatus.bind(this)}/>
+								handleLogout = {this.handleLogout.bind(this)}/>
 							)}
 
 						/>
