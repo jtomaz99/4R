@@ -26,7 +26,7 @@ export default class Home extends Component {
         return(
             <div>
             <img src={logo} alt="FOURR"/>
-            <h1>Bem vindo, {this.props.departamento}</h1>
+            <h1>Bem vindo, {this.departamento}</h1>
 			<button onClick={() => this.handleLogoutClick()}>Logout</button>
             </div>
         );
