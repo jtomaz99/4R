@@ -18,7 +18,7 @@ export default class Routes extends Component {
 		
 		this.handeLogin = this.handleLogin.bind(this);
 		this.handeLogout = this.handleLogout.bind(this);
-		this.loginStatus = this.loginStatus();
+		this.loginStatus = this.loginStatus.bind(this);
 	}
 	
 	loginStatus(){
