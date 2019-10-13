@@ -63,7 +63,7 @@ export default class Forgot extends Component {
                     <input 
                     placeholder="Email"
                     name= "email"
-                    value={this.state.token}
+                    value={this.state.email}
                     onChange={this.handleChange}
                     required
                     />
