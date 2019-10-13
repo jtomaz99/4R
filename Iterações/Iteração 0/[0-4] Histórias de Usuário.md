@@ -26,6 +26,12 @@ Como um usuário
 Eu quero recuperar minha senha
 Para que eu tenha garantia de acesso
 ```
+```
+5#
+Como um usuário
+Eu quero ter acesso a uma tela de home
+Para que eu possa visualizar melhor o sistema
+```
 
 
 ***
