@@ -72,7 +72,7 @@ export default class Forgot extends Component {
                     <input 
                     placeholder="Nova Senha"
                     name= "password"
-                    value={this.state.token}
+                    value={this.state.password}
                     onChange={this.handleChange}
                     required
                     />
