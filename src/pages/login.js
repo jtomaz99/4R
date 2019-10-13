@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 import './main.css';
 import logo from '../assets/logo.svg';
@@ -80,6 +81,7 @@ export default class Login extends Component {
                     />
                     <button type="submit">Entrar</button>
                 </form>
+                <Link to="/forgot">Esqueci minha senha</Link>
             </div>
         );
     }

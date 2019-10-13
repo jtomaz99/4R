@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 import './main.css';
 import logo from '../assets/logo.svg';
@@ -70,6 +71,7 @@ export default class Forgot extends Component {
 
                     <button type="submit">Enviar Token</button>
                 </form>
+                <Link to="/reset">Já tenho um token</Link>
             </div>
         );
     }
