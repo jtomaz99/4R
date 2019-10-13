@@ -5,6 +5,8 @@ import axios from 'axios';
 import Login from './pages/login';
 import Register from './pages/register';
 import Home from './pages/home'
+import Forgot from './pages/forgot'
+import Reset from './pages/reset'
 
 
 export default class Routes extends Component {
@@ -92,6 +94,22 @@ export default class Routes extends Component {
 								logged_in = {this.state.logged_in}
 								departamento={this.state.departamento} 
 								handleLogout = {this.handleLogout.bind(this)}/>
+							)}
+
+						/>
+					<Route 
+						path='/forgot' 
+						exact 
+						render={props => (
+							<Forgot {... props}/>
+							)}
+
+						/>
+					<Route 
+						path='/reset' 
+						exact 
+						render={props => (
+							<Reset {... props}/>
 							)}
 
 						/>
