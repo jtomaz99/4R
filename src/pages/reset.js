@@ -32,7 +32,7 @@ export default class Forgot extends Component {
     }
 
     handleSubmit(event) {
-        const {email,token,password} = this.state;
+        const {token,password} = this.state;
         
         axios.post(
             "https://fourr-api.herokuapp.com/reset/", 
