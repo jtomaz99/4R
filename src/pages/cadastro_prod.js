@@ -41,7 +41,7 @@ export default class Cadastro_prod extends Component {
         this.setState({
             imagem: event.target.files[0]
         })
-        console.log(this.imagem)
+        console.log(this.state.imagem)
     }''
 
     handleSubmit(event) {
