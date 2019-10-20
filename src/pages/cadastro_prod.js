@@ -38,22 +38,29 @@ export default class Cadastro_prod extends Component {
     }  
 
     fileSelectedHandler(event){
-        this.setState({
-            imagem: event.target.files[0]
-        })
+        let files =event.target.files
+        let reader = new FileReader();
+        reader.readAsDataURL(files[0])
+
+        reader.onload=(event)=>{
+            this.setState({
+                imagem: {imagem:event.target.result}
+            })
+        }
         console.log(this.state.imagem)
-    }''
+    }
 
     handleSubmit(event) {
         if (this.props.logged_in === "logado"){
             const {descricao,imagem,nome_prod,categoria} = this.state;
-            console.log(imagem)
+            console.log('enviando',this.imagem)
             axios.post(
                 "https://fourr-api.herokuapp.com/new_product/", {
                 produto:{dono_produto: this.props.departamento.email,
                         descricao: descricao,
                         categoria: categoria,
-                        nome_prod: nome_prod}},
+                        nome_prod: nome_prod,
+                        imagem: imagem}},
                         {withCredentials: true}
             ).then(response => {
                 console.log("response",response.data)}                   
