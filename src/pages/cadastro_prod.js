@@ -47,14 +47,16 @@ export default class Cadastro_prod extends Component {
     handleSubmit(event) {
         if (this.props.logged_in === "logado"){
             const {descricao,imagem,nome_prod,categoria} = this.state;
-            console.log('enviando',this.state.imagem)
+            const fd = new FormData();
+            fd.append('imagem', this.state.imagem,this.state.imagem.name);
+            console.log('enviando',fd)
             axios.post(
                 "https://fourr-api.herokuapp.com/new_product/", {
                 produto:{dono_produto: this.props.departamento.email,
                         descricao: descricao,
                         categoria: categoria,
                         nome_prod: nome_prod,
-                        imagem: imagem}},
+                        imagem: fd}},
                         {withCredentials: true}
             ).then(response => {
                 console.log("response",response.data)}                   
@@ -104,7 +106,6 @@ export default class Cadastro_prod extends Component {
 
                     <input 
                     placeholder="imagem"
-                    name="file"
                     type="file"
                     onChange={this.fileSelectedHandler}
                     required
