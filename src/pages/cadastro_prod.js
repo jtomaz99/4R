@@ -79,7 +79,7 @@ export default class Cadastro_prod extends Component {
                 <Retangulos />    
                 <form onSubmit={this.handleSubmit}>
                     <img src={logo} alt="FOURR"/>
-                    <h5><b>Cadastrar Produto</b></h5>
+                    <h5><b>Cadastrar Produto {this.props.departamento.email} </b></h5>
                     
                     <input 
                     placeholder="Nome do Produto"
