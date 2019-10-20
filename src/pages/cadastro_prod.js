@@ -5,7 +5,7 @@ import logo from '../assets/logo.svg';
 import Retangulos from '../components/retangulos.js'
 import Popup from '../components/popup.js'
 
-export default class Register extends Component {
+export default class Cadastro_prod extends Component {
     constructor(props) {
         super(props);
 
