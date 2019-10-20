@@ -7,7 +7,7 @@ import Register from './pages/register';
 import Home from './pages/home'
 import Forgot from './pages/forgot'
 import Reset from './pages/reset'
-
+import Cadastro_prod from './pages/cadastro_prod'
 
 export default class Routes extends Component {
 	constructor() {
@@ -76,8 +76,8 @@ export default class Routes extends Component {
 								handleLogin = {this.handleLogin.bind(this)} 
 								logged_in={this.state.logged_in} />
 							)}
+					/>
 
-						/>
 					<Route 
 						path='/register' 
 						exact 
@@ -85,7 +85,8 @@ export default class Routes extends Component {
 							<Register {... props} 
 							logged_in={this.state.logged_in} />
 							)}
-						/>
+					/>
+
 					<Route 
 						path='/home' 
 						exact 
@@ -95,24 +96,35 @@ export default class Routes extends Component {
 								departamento={this.state.departamento} 
 								handleLogout = {this.handleLogout.bind(this)}/>
 							)}
+					/>
 
-						/>
+					<Route 
+						path='/cadastro_prod' 
+						exact 
+						render={props => (
+							<Cadastro_prod {... props} 
+								logged_in = {this.state.logged_in}
+								departamento={this.state.departamento} 
+								handleLogout = {this.handleLogout.bind(this)}/>
+							)}
+					/>
+
 					<Route 
 						path='/forgot' 
 						exact 
 						render={props => (
 							<Forgot {... props}/>
 							)}
+					/>
 
-						/>
 					<Route 
 						path='/reset' 
 						exact 
 						render={props => (
 							<Reset {... props}/>
 							)}
+					/>
 
-						/>
 				</Switch>
 	        </BrowserRouter>
     	);
