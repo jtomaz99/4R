@@ -50,9 +50,6 @@ export default class Cadastro_prod extends Component {
             const {descricao,imagem,nome_prod,categoria} = this.state;
             const fd = new FormData();
             fd.append('image',this.state.imagem,this.state.imagem.name);
-            console.log('img',this.state.imagem)
-            console.long('name',this.state.imagem.name)
-            console.log('enviando',fd.get('name'))
             axios.post(
                 "https://fourr-api.herokuapp.com/new_product/", {
                 produto:{dono_produto: this.props.departamento.email,
@@ -71,17 +68,6 @@ export default class Cadastro_prod extends Component {
             this.togglePopup()
         }
         event.preventDefault();
-            const {imagem} = this.state;
-            const fd = new FormData();
-            fd.append('image',this.state.imagem,this.state.imagem.name);
-        axios.post(
-                "https://fourr-api.herokuapp.com/new_img/", 
-                {content:{fd}},{withCredentials: true})
-            .then(response => {
-                console.log("response",response.data)}                   
-            ).catch(error => {
-                console.log("error message",error)
-            })
     }
 
     render () {
