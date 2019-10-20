@@ -10,7 +10,7 @@ export default class Register extends Component {
         super(props);
 
         this.state = {
-            dono_produto: this.props.departamento.nome,
+            dono_produto: this.props.departamento.email,
             descricao: "",
             imagem: null,
             categoria: "",
