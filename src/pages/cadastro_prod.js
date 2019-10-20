@@ -56,6 +56,7 @@ export default class Cadastro_prod extends Component {
             ).then(response => {
                 if (response.data.status === true){
                     const formData = new FormData();
+                    console.log('image',this.state.imagem,this.state.imagem.name)
                     formData.append('image',this.state.imagem,this.state.imagem.name)
                     axios.post("https://fourr-api.herokuapp.com/new_img/",{
                         imagem:{formData:formData,
