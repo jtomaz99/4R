@@ -53,6 +53,10 @@ export default class Cadastro_prod extends Component {
             console.log('img',this.state.imagem)
             console.log('name',this.state.imagem.name)
             console.log('enviando',fd.get('name'))
+            for (var pair of fd.entries())
+            {
+             console.log(pair[0]+ ', '+ pair[1]); 
+            }
             axios.post(
                 "https://fourr-api.herokuapp.com/new_product/", {
                 produto:{dono_produto: this.props.departamento.email,
