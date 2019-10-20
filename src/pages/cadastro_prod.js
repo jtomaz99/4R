@@ -48,7 +48,7 @@ export default class Cadastro_prod extends Component {
         if (this.props.logged_in === "logado"){
             const {descricao,imagem,nome_prod,categoria} = this.state;
             const fd = new FormData();
-            fd.append('imagem', this.state.imagem,this.state.imagem.name);
+            fd.append('image',this.state.imagem,this.state.imagem.name);
             console.log('enviando',fd)
             axios.post(
                 "https://fourr-api.herokuapp.com/new_product/", {
