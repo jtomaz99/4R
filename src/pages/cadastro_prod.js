@@ -41,6 +41,7 @@ export default class Cadastro_prod extends Component {
         this.setState({
             imagem: event.target.files[0]
         })
+        console.log(this.state.imagem)
     }
 
     handleSubmit(event) {
@@ -54,21 +55,8 @@ export default class Cadastro_prod extends Component {
                         nome_prod: nome_prod}},
                         {withCredentials: true}
             ).then(response => {
-                if (response.data.status === true){
-                    const formData = new FormData();
-                    console.log('image',this.state.imagem,this.state.imagem.name)
-                    formData.append('image',this.state.imagem,this.state.imagem.name)
-                    axios.post("https://fourr-api.herokuapp.com/new_img/",{
-                        imagem:{formData:formData,
-                                produto:response.data.produto.id}},
-                        {withCredentials: true}
-                    ).then(response => {
-                        console.log("response",response.data)
-                    }).catch(error => {
-                        console.log("error message",error)
-                    })
-                }                   
-            }).catch(error => {
+                console.log("response",response.data)}                   
+            ).catch(error => {
                 console.log("error message",error)
             })
         }
