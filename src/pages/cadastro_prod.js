@@ -38,15 +38,9 @@ export default class Cadastro_prod extends Component {
     }  
 
     fileSelectedHandler(event){
-        let files =event.target.files
-        let reader = new FileReader();
-        reader.readAsDataURL(files[0])
-
-        reader.onload=(event)=>{
             this.setState({
-                imagem: {imagem:event.target.result}
+                imagem: event.target.files[0]
             })
-        }
         console.log(this.state.imagem)
     }
 
