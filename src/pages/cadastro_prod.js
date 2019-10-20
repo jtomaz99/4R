@@ -48,7 +48,7 @@ export default class Register extends Component {
         if (this.props.logged_in === "logado"){
             const {dono_produto,descricao,nome_prod,imagem,categoria} = this.state;
             axios.post(
-                "https://fourr-api.herokuapp.com/registrations/", {
+                "https://fourr-api.herokuapp.com/new_product/", {
                 produto:{dono_produto: dono_produto,
                         descricao: descricao,
                         categoria: categoria,
