@@ -47,14 +47,15 @@ export default class Cadastro_prod extends Component {
     handleSubmit(event) {
         if (this.props.logged_in === "logado"){
             const {dono_produto,descricao,nome_prod,imagem,categoria} = this.state;
-            console.log({produto:{dono_produto: dono_produto,
+            console.log({produto:{
+                        dono_produto: this.props.departamento.email,
                         descricao: descricao,
                         categoria: categoria,
                         nome_prod: nome_prod,
                         imagem: imagem}});
             axios.post(
                 "https://fourr-api.herokuapp.com/new_product/", {
-                produto:{dono_produto: dono_produto,
+                produto:{dono_produto: this.props.departamento.email,
                         descricao: descricao,
                         categoria: categoria,
                         nome_prod: nome_prod,
