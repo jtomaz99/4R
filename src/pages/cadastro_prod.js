@@ -59,7 +59,7 @@ export default class Cadastro_prod extends Component {
                 if (response.data.status === true) {
                     const {imagem} = this.state;
                     const fd = new FormData();
-                    fd.append('imagem',this.state.imagem,this.state.imagem.name);
+                    fd.append('imagem',this.state.imagem);
                     console.log('img',this.state.imagem)
                     console.log('name',this.state.imagem.name)
                     axios.post(
