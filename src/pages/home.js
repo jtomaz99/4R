@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-import './main.css';
+import './home.css';
 import logo from '../assets/logo.svg';
 import teste from '../assets/background.jpg';
 
@@ -26,17 +26,43 @@ export default class Home extends Component {
 	
     render () {
         return(
-            <div>
+			
+            <div className="container-fluid">
+
 				<nav className="navbar-home navbar-light navbar">
 					<h1 className="welcome">Bem vindo, {this.props.departamento.nome}</h1>
-					<button onClick={() => this.handleLogoutClick()}>Logout</button>
 				</nav>
-				<a href="#" className="links text-decoration-none font-weight-bolder float-left" >Sobre-nós</a>
-      			<a href="#" className="links text-decoration-none font-weight-bolder float-right">Sair</a>
-				<div className="container-logo">
-					<img src={logo} alt="FOURR"/>
+
+				<div className="row">
+
+					<div className="col-md-4 col-sm-4 col-xs-6">
+						<button type="button" className="btn btn-success item">Sobre-nós</button>
+					</div>
+
+					<div className="col-md-4 col-sm-4 col-xs-6">
+						<img className="logo" src={logo}/>
+					</div>
+
+					<div className="col-md-4 col-sm-4 col-xs-6">
+						<button type="button" className="btn btn-success item" onClick={() => this.handleLogoutClick()} >Sair</button>
+					</div>
+
 				</div>
-				<div id="ladoalado"><img src={teste}/></div> 
+
+					<div className="row">
+
+					<div className="col-md-6 image-back">
+						
+					</div>
+					<div className="col-md-6 image-back2">
+						<img src={teste} className="coluna"/>
+						
+					</div>
+
+  				</div>
+
+				
+				
             </div>
         );
     }
