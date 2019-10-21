@@ -69,16 +69,18 @@ export default class Cadastro_prod extends Component {
                         }
                         ).catch(error => {
                             console.log("error message",error)
-                        }
+                        })
+                    }}
             ).catch(error => {
                 console.log("error message",error)
             })
+
         }
         else{
             this.togglePopup()
         }
         event.preventDefault();
-    }
+        }
 
     render () {
 
