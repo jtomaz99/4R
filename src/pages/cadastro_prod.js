@@ -49,10 +49,9 @@ export default class Cadastro_prod extends Component {
         if (this.props.logged_in === "logado"){
             const {descricao,imagem,nome_prod,categoria} = this.state;
             const fd = new FormData();
-            fd.append('image',this.state.imagem,this.state.imagem.name);
+            fd.append(this.state.imagem,this.state.imagem.name);
             console.log('img',this.state.imagem)
             console.log('name',this.state.imagem.name)
-            console.log('enviando',fd.get('name'))
             for (var pair of fd.entries())
             {
              console.log(pair[0]+ ', '+ pair[1]); 
