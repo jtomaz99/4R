@@ -57,12 +57,11 @@ export default class Cadastro_prod extends Component {
              console.log(pair[0]+ ', '+ pair[1]); 
             }
             axios.post(
-                "https://fourr-api.herokuapp.com/new_product/", {
+                "https://fourr-api.herokuapp.com/new_product/", fd, {
                 produto:{dono_produto: this.props.departamento.email,
                         descricao: descricao,
                         categoria: categoria,
-                        nome_prod: nome_prod,
-                        imagem: fd}},
+                        nome_prod: nome_prod}},
                         {withCredentials: true}
             ).then(response => {
                 console.log("response",response.data)}                   
