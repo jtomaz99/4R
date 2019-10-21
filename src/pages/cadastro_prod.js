@@ -47,24 +47,29 @@ export default class Cadastro_prod extends Component {
     handleSubmit(event) {
         event.preventDefault();
         if (this.props.logged_in === "logado"){
-            const {descricao,imagem,nome_prod,categoria} = this.state;
-            const fd = new FormData();
-            fd.append('imagem',this.state.imagem,this.state.imagem.name);
-            console.log('img',this.state.imagem)
-            console.log('name',this.state.imagem.name)
-            for (var pair of fd.entries())
-            {
-             console.log(pair[0]+ ', '+ pair[1]); 
-            }
+            const {descricao,categoria,nome_prod} = this.state;
             axios.post(
-                "https://fourr-api.herokuapp.com/new_product/",{fd,
-                produto:{dono_produto: this.props.departamento.email,
+                "https://fourr-api.herokuapp.com/new_product/",{
+                        produto:{dono_produto: this.props.departamento.email,
                         descricao: descricao,
                         categoria: categoria,
                         nome_prod: nome_prod}},
                         {withCredentials: true}
             ).then(response => {
-                console.log("response",response.data)}                   
+                if (response.data.status === true) {
+                    const {imagem} = this.state;
+                    const fd = new FormData();
+                    fd.append('imagem',this.state.imagem,this.state.imagem.name);
+                    console.log('img',this.state.imagem)
+                    console.log('name',this.state.imagem.name)
+                    axios.post(
+                        "https://fourr-api.herokuapp.com/new_img/",fd,{withCredentials: true}
+                        ).then(response => {
+                            console.log("response",response.data)
+                        }
+                        ).catch(error => {
+                            console.log("error message",error)
+                        }
             ).catch(error => {
                 console.log("error message",error)
             })
