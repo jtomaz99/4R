@@ -91,7 +91,7 @@ export default class Register extends Component {
                     onChange={this.handleChange}
                     required
                     />
-                    <button type="submit">Criar Conta</button>
+                    <button id="create" type="submit">Criar Conta</button>
                 </form>
             </div>
         );
