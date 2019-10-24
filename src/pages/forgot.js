@@ -69,7 +69,7 @@ export default class Forgot extends Component {
                     required
                     />
 
-                    <button type="submit">Enviar Token</button>
+                    <button id="token" type="submit">Enviar Token</button>
                 </form>
                 <Link to="/reset">Já tenho um token</Link>
             </div>
