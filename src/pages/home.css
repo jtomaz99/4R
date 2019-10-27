@@ -73,14 +73,7 @@ body, input, button {
     align-items: center;
  }
 
-.image-back {
-    background-image: url(../assets/background.jpg);
+.fundo{
+    background-image: url(../assets/background.jpg) ;
 }
 
-.image-back2 {
-    background-image: url(../assets/background2.jpg);
-}
-
-.aumentar {
-    height: ;
-}

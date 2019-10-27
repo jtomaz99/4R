@@ -27,7 +27,7 @@ export default class Home extends Component {
     render () {
         return(
 			
-            <div className="container-fluid">
+            <div className="container-fluid fundo">
 
 				<nav className="navbar-home navbar-light navbar">
 					<h1 className="welcome">Bem vindo, {this.props.departamento.nome}</h1>
@@ -36,7 +36,7 @@ export default class Home extends Component {
 				<div className="row">
 
 					<div className="col-md-4 col-sm-4 col-xs-6">
-						<button type="button" className="btn btn-success item">Sobre-nós</button>
+						<button type="button" className="btn btn-success item">Pesquisar</button>
 					</div>
 
 					<div className="col-md-4 col-sm-4 col-xs-6">
@@ -49,19 +49,6 @@ export default class Home extends Component {
 
 				</div>
 
-					<div className="row">
-
-					<div className="col-md-6 image-back">
-						
-					</div>
-					<div className="col-md-6 image-back2">
-						<img src={teste} className="coluna"/>
-						
-					</div>
-
-  				</div>
-
-				
 				
             </div>
         );
