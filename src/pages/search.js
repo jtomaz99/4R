@@ -4,7 +4,7 @@ import axios from 'axios';
 import logo from '../assets/logo.svg';
 import Retangulos from '../components/retangulos.js'
 
-export default class Register extends Component {
+export default class Search extends Component {
     constructor(props) {
         super(props);
 
@@ -13,10 +13,15 @@ export default class Register extends Component {
             categoria: "",
         }
 
+        this.itemSucess = this.itemSucess.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
 
     }
+
+    itemSucess(){
+		this.props.history.push("/item-list");
+	}
 
     handleChange(event){
         this.setState({
@@ -26,14 +31,16 @@ export default class Register extends Component {
     }
 
     handleSubmit(event) {
-        const {email,password,nome,password_confirmation} = this.state;
+        const {nome,categoria} = this.state;
         
         axios.post(
-            "https://fourr-api.herokuapp.com/registrations/", {
-            departamento:{nome_depto: nome,email: email,password: password,password_confirmation: password_confirmation}},
+            "https://fourr-api.herokuapp.com/searchs/", {
+            item:{nome_item: nome,categoria: categoria}}, //atualizar
             {withCredentials: true}
         ).then(response => {
-            console.log("cadastro resposta", response);
+            if (response.data.categoria === true){ //atualizar
+            this.itemSucess();
+            }
         }).catch(error => {
             console.log("error message",error)
         })
@@ -49,10 +56,10 @@ export default class Register extends Component {
                 <Retangulos />    
                 <form onSubmit={this.handleSubmit}>
                     <img src={logo} alt="FOURR"/>
-                    <h5><b>Pesquisar Item</b></h5>
+                    <h5><b>Qual item você precisa?</b></h5>
                     
                     <input 
-                    placeholder="Nome"
+                    placeholder="Nome do produto"
                     name= "nome"
                     value={this.state.nome}
                     onChange={this.handleChange}
@@ -60,9 +67,9 @@ export default class Register extends Component {
                     />
 
                     <input 
-                    placeholder="Categoria"
+                    placeholder="Categoria do produto"
                     name= "categoria"
-                    value={this.state.email}
+                    value={this.state.categoria}
                     type="categoria"
                     onChange={this.handleChange}
                     required
