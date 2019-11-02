@@ -3,25 +3,19 @@ import './main.css';
 import axios from 'axios';
 import logo from '../assets/logo.svg';
 import Retangulos from '../components/retangulos.js'
-import Popup from '../components/popup.js'
 
-export default class Cadastro_prod extends Component {
+export default class Register extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            descricao: "",
-            imagem: null,
+            nome: "",
             categoria: "",
-            nome_prod: "",
-            showPopup: false,
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
-        this.fileSelectedHandler = this.fileSelectedHandler.bind(this);
-        this.togglePopup = this.togglePopup.bind(this)
-        
+
     }
 
     handleChange(event){
@@ -31,72 +25,36 @@ export default class Cadastro_prod extends Component {
 
     }
 
-    togglePopup() {  
-        this.setState({  
-            showPopup: !this.state.showPopup  
-        })
-    }  
-
-    fileSelectedHandler(event){
-            this.setState({
-                imagem: event.target.files[0]
-            })
-        console.log(this.state.imagem)
-    }
-
     handleSubmit(event) {
+        const {email,password,nome,password_confirmation} = this.state;
+        
+        axios.post(
+            "https://fourr-api.herokuapp.com/registrations/", {
+            departamento:{nome_depto: nome,email: email,password: password,password_confirmation: password_confirmation}},
+            {withCredentials: true}
+        ).then(response => {
+            console.log("cadastro resposta", response);
+        }).catch(error => {
+            console.log("error message",error)
+        })
+        
         event.preventDefault();
-        if (this.props.logged_in === "logado"){
-            const {descricao,categoria,nome_prod} = this.state;
-            axios.post(
-                "https://fourr-api.herokuapp.com/new_product/",{
-                        produto:{dono_produto: this.props.departamento.email,
-                        descricao: descricao,
-                        categoria: categoria,
-                        nome_prod: nome_prod}},
-                        {withCredentials: true}
-            ).then(response => {
-                if (response.data.status === true) {
-                    const {imagem} = this.state;
-                    const fd = new FormData();
-                    fd.append('image',this.state.imagem);
-                    console.log('img',this.state.imagem)
-                    console.log('name',this.state.imagem.name)
-                    axios.post(
-                        "https://fourr-api.herokuapp.com/new_img/",fd,{withCredentials: true}
-                        ).then(response => {
-                            console.log("response",response.data)
-                        }
-                        ).catch(error => {
-                            console.log("error message",error)
-                        })
-                    }}
-            ).catch(error => {
-                console.log("error message",error)
-            })
 
-        }
-        else{
-            this.togglePopup()
-        }
-        event.preventDefault();
-        }
+    }
 
     render () {
 
         return(
-            <div>
-                <nav className="navbar-home navbar-light navbar">
-				    <img className="logo logo-others" src={logo}/>
-				</nav>
+            <div className="login-container">
+                <Retangulos />    
                 <form onSubmit={this.handleSubmit}>
                     <img src={logo} alt="FOURR"/>
-                    <h5><b>Cadastrar Produto</b></h5>
+                    <h5><b>Pesquisar Item</b></h5>
                     
                     <input 
-                    placeholder="Nome do Produto"
-                    name= "nome_prod"
-                    value={this.state.nome_prod}
+                    placeholder="Nome"
+                    name= "nome"
+                    value={this.state.nome}
                     onChange={this.handleChange}
                     required
                     />
@@ -104,30 +62,13 @@ export default class Cadastro_prod extends Component {
                     <input 
                     placeholder="Categoria"
                     name= "categoria"
-                    value={this.state.categoria}
+                    value={this.state.email}
+                    type="categoria"
                     onChange={this.handleChange}
                     required
                     />
-
-                    <input 
-                    placeholder="Descricao"
-                    name= "descricao"
-                    value={this.state.descricao}
-                    type="text"
-                    onChange={this.handleChange}
-                    required
-                    />
-
-                    <input 
-                    placeholder="imagem"
-                    type="file"
-                    onChange={this.fileSelectedHandler}
-                    required
-                    />
-                    <button type="submit">Cadastrar</button>
+                    <button type="submit">Pesquisar</button>
                 </form>
-                {this.state.showPopup ? <Popup text='Faça login para cadastrar um produto!'  
-                            closePopup={this.togglePopup.bind(this)}/>: null}
             </div>
         );
     }

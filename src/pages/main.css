@@ -116,6 +116,7 @@
 .navbar-home {
     min-height: 80px;
     background-color: #50c878;
+    padding: 2px;
 }
 
 .navbar-white {
@@ -202,6 +203,12 @@
 }
 
 .logo-others{
-    width: 90px;
+    width: 50px;
     border: 1px solid white;
+    padding: 1px;
+    margin: 1px auto;
+}
+
+.container-search {
+    
 }
