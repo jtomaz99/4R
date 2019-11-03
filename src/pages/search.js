@@ -31,7 +31,7 @@ export default class Search extends Component {
 
     handleSubmit(event) {
         const {nome} = this.state;  
-        axios.get(
+        axios.post(
             "https://fourr-api.herokuapp.com/search/",{
                 produto:{nome: nome}},
             {withCredentials: true}
