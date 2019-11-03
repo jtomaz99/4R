@@ -9,6 +9,7 @@ import Forgot from './pages/forgot'
 import Reset from './pages/reset'
 import Cadastro_prod from './pages/cadastro_prod'
 import Search from './pages/search'
+import ProdutosBusca from './pages/produtos_busca'
 
 export default class Routes extends Component {
 	constructor() {
@@ -16,12 +17,14 @@ export default class Routes extends Component {
 
 		this.state = {
 			logged_in: "nao_logado",
-			departamento: {}
+			departamento: {},
+			produtos: {}
 		};
 		
 		this.handeLogin = this.handleLogin.bind(this);
 		this.handeLogout = this.handleLogout.bind(this);
 		this.loginStatus = this.loginStatus.bind(this);
+		this.handleItens = this.handleItens.bind(this);
 	}
 	
 	loginStatus(){
@@ -56,7 +59,12 @@ export default class Routes extends Component {
 			});
 			
 		}
-		
+	handleItens(data){
+			this.setState({
+				produtos: data.produtos
+			})
+	}
+
 	handleLogout() {
 			this.setState({
 				logged_in: "nao_logado",
@@ -117,6 +125,18 @@ export default class Routes extends Component {
 							<Search {... props} 
 								logged_in = {this.state.logged_in}
 								departamento={this.state.departamento} 
+								handleLogout = {this.handleLogout.bind(this)}/>
+							)}
+					/>
+
+					<Route 
+						path='/produtos-busca' 
+						exact 
+						render={props => (
+							<ProdutosBusca {... props} 
+								logged_in = {this.state.logged_in}
+								departamento={this.state.departamento}
+								produtos={this.state.produtos} 
 								handleLogout = {this.handleLogout.bind(this)}/>
 							)}
 					/>
