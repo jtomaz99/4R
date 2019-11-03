@@ -55,8 +55,10 @@ export default class Home extends Component {
 					<div>
 						<img className="logo" src={teste}/>
 					</div>
-					<div>
-						<h1>produtinhos: {this.props.produtos}</h1>
+					<div className="col">
+						<h1>PRODUTINHOS</h1>
+						<p>RESULTADO DA BUSCA</p>
+						{this.props.produtos.map(descricao => <div>{produto.descricao}</div>)}
 					</div>
 				</div>
             </div>
