@@ -10,6 +10,7 @@ export default class HomeLogado extends Component {
         super(props); 
 		
 		this.handleLogoutClick = this.handleLogoutClick.bind(this);
+		this.handlePesquisarClick = this.handlePesquisarClick.bind(this);
     }
 	
 	handleLogoutClick(){
@@ -22,7 +23,11 @@ export default class HomeLogado extends Component {
 				console.log("erro logout",error)
 			})		
 		
-	}	
+	}
+
+	handlePesquisarClick(){
+		this.props.history.push("/search")
+	}
 	
     render () {
         return(
@@ -36,7 +41,7 @@ export default class HomeLogado extends Component {
 				<div className="row">
 
 					<div className="col-md-4 col-sm-4 col-xs-6">
-						<button type="button" className="btn btn-success item">Pesquisar</button>
+						<button type="button" className="btn btn-success item" onClick={() => this.handlePesquisarClick()} >Pesquisar</button>
 					</div>
 
 					<div className="col-md-4 col-sm-4 col-xs-6">
