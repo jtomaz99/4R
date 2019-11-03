@@ -13,9 +13,11 @@ export default class HomeDeslogado extends Component {
 	
 	handleLoginClick(){
 		this.props.history.push("/login");
-	}
+	} 
 	
 	componentDidMount(){
+		console.log(this.props.logged_in)
+		console.log(this.props.logged_in === "logado")
 		if (this.props.logged_in === "logado")
 			this.props.history.push("/home");
 	}
