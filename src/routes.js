@@ -84,7 +84,8 @@ export default class Routes extends Component {
 						exact 
 						render={props => (
 							<HomeDeslogado {... props} 
-								logged_in={this.state.logged_in} />
+								logged_in = {this.state.logged_in}
+								departamento={this.state.departamento} />
 							)}
 					/>
 
