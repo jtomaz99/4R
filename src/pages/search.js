@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './main.css';
 import axios from 'axios';
 import logo from '../assets/logo.svg';
+import Retangulos from '../components/retangulos.js'
 
 export default class Search extends Component {
     constructor(props) {
