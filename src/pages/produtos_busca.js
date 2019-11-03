@@ -42,7 +42,7 @@ export default class Home extends Component {
 				<div className="row">
 
 					<div className="col-md-4 col-sm-4 col-xs-6">
-						<button type="button" className="btn btn-success item" onClick={() => this.handlePesquisarClick()} >Pesquisar</button>
+						<button type="button" className="btn btn-success item" onClick={() => this.handlePesquisarClick()} >Pesquisar Outros</button>
 					</div>
 
 					<div className="col-md-4 col-sm-4 col-xs-6">
@@ -54,6 +54,9 @@ export default class Home extends Component {
 					</div>
 					<div>
 						<img className="logo" src={teste}/>
+					</div>
+					<div>
+						<h1>produtinhos: {this.props.produtos}</h1>
 					</div>
 				</div>
             </div>
