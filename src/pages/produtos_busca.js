@@ -8,7 +8,6 @@ import teste from '../assets/background.jpg';
 export default class Home extends Component {
     constructor(props) {
         super(props); 
-		
 		this.handleLogoutClick = this.handleLogoutClick.bind(this);
 		this.handlePesquisarClick = this.handlePesquisarClick.bind(this);
     }
@@ -24,11 +23,13 @@ export default class Home extends Component {
 			})		
 		
 	}	
-	
+	componentDidMount(){
+		console.log(this.props.produtos)
+	}
+
 	handlePesquisarClick(){
 		this.props.history.push("/home");
 	}
-
     render () {
         return(
 			
@@ -55,8 +56,6 @@ export default class Home extends Component {
 						<img className="logo" src={teste}/>
 					</div>
 				</div>
-
-				
             </div>
         );
     }
