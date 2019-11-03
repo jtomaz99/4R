@@ -85,8 +85,10 @@ export default class Cadastro_prod extends Component {
     render () {
 
         return(
-            <div className="login-container">
-                <Retangulos />    
+            <div>
+                <nav className="navbar-home navbar-light navbar">
+				    <img className="logo logo-others" src={logo}/>
+				</nav>
                 <form onSubmit={this.handleSubmit}>
                     <img src={logo} alt="FOURR"/>
                     <h5><b>Cadastrar Produto</b></h5>

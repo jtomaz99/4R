@@ -69,9 +69,18 @@ export default class Forgot extends Component {
                     required
                     />
 
-                    <button type="submit">Enviar Token</button>
+                <div className = "row">
+                    <div className="col-md-6 esqueci-senha">
+                        <Link to="/reset" className="badge badge-danger text-wrap">Já tenho um token</Link>
+                    </div>
+                    <div  className="col-md-6 entrar">
+                        <button type="submit">Enviar Token</button>
+                    </div>
+
+                </div>
+
                 </form>
-                <Link to="/reset">Já tenho um token</Link>
+
             </div>
         );
     }

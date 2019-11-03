@@ -8,6 +8,7 @@ import Home from './pages/home'
 import Forgot from './pages/forgot'
 import Reset from './pages/reset'
 import Cadastro_prod from './pages/cadastro_prod'
+import Search from './pages/search'
 
 export default class Routes extends Component {
 	constructor() {
@@ -103,6 +104,17 @@ export default class Routes extends Component {
 						exact 
 						render={props => (
 							<Cadastro_prod {... props} 
+								logged_in = {this.state.logged_in}
+								departamento={this.state.departamento} 
+								handleLogout = {this.handleLogout.bind(this)}/>
+							)}
+					/>
+
+					<Route 
+						path='/search' 
+						exact 
+						render={props => (
+							<Search {... props} 
 								logged_in = {this.state.logged_in}
 								departamento={this.state.departamento} 
 								handleLogout = {this.handleLogout.bind(this)}/>
