@@ -28,7 +28,7 @@ export default class Home extends Component {
 	}
 
 	handlePesquisarClick(){
-		this.props.history.push("/home");
+		this.props.history.push("/search");
 	}
     render () {
         return(
