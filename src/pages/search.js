@@ -30,12 +30,10 @@ export default class Search extends Component {
     }
 
     handleSubmit(event) {
-        const {nome} = this.state;
-        console.log({
-            produto:{nome: nome}});
+        const {nome} = this.state;  
         axios.get(
-            "https://fourr-api.herokuapp.com/search", {
-            produto:{nome: nome}},
+            "https://fourr-api.herokuapp.com/search/", 
+            {produto:{nome: nome}},
             {withCredentials: true}
         ).then(response => {
             if (response.data.status === true){
@@ -48,6 +46,7 @@ export default class Search extends Component {
         event.preventDefault();
 
     }
+
 
     render () {
 
