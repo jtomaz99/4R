@@ -137,7 +137,8 @@ export default class Routes extends Component {
 							<Search {... props} 
 								logged_in = {this.state.logged_in}
 								departamento={this.state.departamento} 
-								handleLogout = {this.handleLogout.bind(this)}/>
+								handleLogout = {this.handleLogout.bind(this)}
+								handleItens = {this.handleItens.bind(this)}/>
 							)}
 					/>
 

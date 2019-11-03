@@ -8,7 +8,7 @@ import teste from '../assets/background.jpg';
 export default class HomeLogado extends Component {
     constructor(props) {
         super(props); 
-		
+        
 		this.handleLogoutClick = this.handleLogoutClick.bind(this);
 		this.handlePesquisarClick = this.handlePesquisarClick.bind(this);
     }
