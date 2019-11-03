@@ -10,6 +10,7 @@ export default class Search extends Component {
 
         this.state = {
             nome: "",
+            produtos: {}
         }
 
         this.itemSucess = this.itemSucess.bind(this);
@@ -19,7 +20,9 @@ export default class Search extends Component {
     }
 
     itemSucess(produtos){
-		console.log(produtos)
+        this.setState({
+            produtos: produtos
+        })
         this.props.handleItens(produtos);
         this.props.history.push("/produtos-busca");
 	}
