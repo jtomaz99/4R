@@ -21,7 +21,7 @@ export default class Search extends Component {
     itemSucess(produtos){
 		console.log(produtos)
         this.props.handleItens(produtos);
-        this.props.history.push("/item-list");
+        this.props.history.push("/produtos-busca");
 	}
 
     handleChange(event){
