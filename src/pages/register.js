@@ -17,6 +17,7 @@ export default class Register extends Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.handleChange = this.RegisterSucesso.bind(this);
 
     }
 
@@ -27,6 +28,11 @@ export default class Register extends Component {
 
     }
 
+    RegisterSucesso(){
+        this.props.history.push("/home");
+    }
+
+
     handleSubmit(event) {
         const {email,password,nome,password_confirmation} = this.state;
         
@@ -36,6 +42,7 @@ export default class Register extends Component {
             {withCredentials: true}
         ).then(response => {
             console.log("cadastro resposta", response);
+            this.RegisterSucesso();
         }).catch(error => {
             console.log("error message",error)
         })
