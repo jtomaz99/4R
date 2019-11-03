@@ -53,7 +53,7 @@ export default class Cadastro_prod extends Component {
                         produto:{dono_produto: this.props.departamento.email,
                         descricao: descricao,
                         categoria: categoria,
-                        nome_prod: nome_prod}},
+                        nome_prod: nome_prod}}, 
                         {withCredentials: true}
             ).then(response => {
                 if (response.data.status === true) {
