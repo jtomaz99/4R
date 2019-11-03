@@ -62,7 +62,7 @@ export default class Routes extends Component {
 		}
 	handleItens(data){
 			this.setState({
-				produtos: data.produtos
+				produtos: data
 			})
 	}
 
