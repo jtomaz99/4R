@@ -10,7 +10,6 @@ export default class Search extends Component {
 
         this.state = {
             nome: "",
-            categoria: "",
         }
 
         this.itemSucess = this.itemSucess.bind(this);
@@ -19,27 +18,27 @@ export default class Search extends Component {
 
     }
 
-    itemSucess(){
-		this.props.history.push("/item-list");
+    itemSucess(produtos){
+		console.log(produtos)
+        //this.props.history.push("/item-list");
 	}
 
     handleChange(event){
         this.setState({
             [event.target.name]: event.target.value
         })
-
     }
 
     handleSubmit(event) {
-        const {nome,categoria} = this.state;
+        const {nome} = this.state;
         
-        axios.post(
-            "https://fourr-api.herokuapp.com/searchs/", {
-            item:{nome_item: nome,categoria: categoria}}, //atualizar
+        axios.get(
+            "https://fourr-api.herokuapp.com/search", {
+            produto:{nome: nome}},
             {withCredentials: true}
         ).then(response => {
-            if (response.data.categoria === true){ //atualizar
-            this.itemSucess();
+            if (response.data.status === true){
+            this.itemSucess(response.data.produtos);
             }
         }).catch(error => {
             console.log("error message",error)
@@ -56,21 +55,12 @@ export default class Search extends Component {
                 <Retangulos />    
                 <form onSubmit={this.handleSubmit}>
                     <img src={logo} alt="FOURR"/>
-                    <h5><b>Qual item você precisa?</b></h5>
+                    <h5><b>Buscar Produtos</b></h5>
                     
                     <input 
                     placeholder="Nome do produto"
                     name= "nome"
                     value={this.state.nome}
-                    onChange={this.handleChange}
-                    required
-                    />
-
-                    <input 
-                    placeholder="Categoria do produto"
-                    name= "categoria"
-                    value={this.state.categoria}
-                    type="categoria"
                     onChange={this.handleChange}
                     required
                     />
