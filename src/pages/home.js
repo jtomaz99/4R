@@ -1,34 +1,53 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-import './main.css';
+import './home.css';
 import logo from '../assets/logo.svg';
+import teste from '../assets/background.jpg';
 
-export default class Home extends Component {
+export default class HomeDeslogado extends Component {
     constructor(props) {
         super(props); 
-		
-		this.handleLogoutClick = this.handleLogoutClick.bind(this);
+		this.handleLoginClick = this.handleLoginClick.bind(this);
     }
 	
-	handleLogoutClick(){
-		axios
-			.delete("https://fourr-api.herokuapp.com/logout", { withCredentials:true })
-			.then(response => {
-				this.props.handleLogout();
-				this.props.history.push("../");
-			}).catch(error => {
-				console.log("erro logout",error)
-			})		
-		
-	}	
+	handleLoginClick(){
+		this.props.history.push("/login");
+	} 
 	
+	componentDidMount(){
+		console.log(this.props.logged_in)
+		console.log(this.props.logged_in === "logado")
+		if (this.props.logged_in === "logado")
+			this.props.history.push("/home");
+	}
+
     render () {
         return(
-            <div>
-            <img src={logo} alt="FOURR"/>
-            <h1>Bem vindo, {this.props.departamento.nome}</h1>
-			<button onClick={() => this.handleLogoutClick()}>Logout</button>
+			
+            <div className="container-fluid fundo">
+
+				<nav className="navbar-home navbar-light navbar">
+					<h1 className="welcome">Bem vindo ao 4R!</h1>
+				</nav>
+
+				<div className="row">
+					<div className="col-md-4 col-sm-4 col-xs-6">
+						<img className="logo" src={logo}/>
+					</div>
+
+					<div className="col-md-4 col-sm-4 col-xs-6">
+						<button type="button" className="btn btn-success item" onClick={() => this.handleLoginClick()} >Login</button>
+					</div>
+					<div>
+						<img className="logo" src={teste}/>
+					</div>
+					<div>
+						<h1>sobre nós bla bla</h1>
+					</div>
+				</div>
+
+				
             </div>
         );
     }

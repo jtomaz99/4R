@@ -70,7 +70,7 @@ export default class Login extends Component {
                     onChange={this.handleChange}
                     required
                     />
-
+                    
                     <input 
                     placeholder="Senha"
                     name= "password"
@@ -79,9 +79,19 @@ export default class Login extends Component {
                     onChange={this.handleChange}
                     required
                     />
-                    <button type="submit">Entrar</button>
+                    <div className = "row">
+                        <div className="col-md-6 esqueci-senha">
+                            <Link to="/forgot" className="badge badge-danger text-wrap">Esqueci minha senha</Link>
+                        </div>
+                        <div className="col-md-6 esqueci-senha">
+                            <Link to="/register" className="badge badge-danger text-wrap">Não tem uma conta? Crie a sua!</Link>
+                        </div>
+                        <div  className="col-md-6 entrar">
+                            <button type="submit">Entrar</button>
+                        </div>
+                    </div>
+
                 </form>
-                <Link to="/forgot">Esqueci minha senha</Link>
             </div>
         );
     }

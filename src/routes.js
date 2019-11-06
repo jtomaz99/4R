@@ -4,10 +4,13 @@ import axios from 'axios';
 
 import Login from './pages/login';
 import Register from './pages/register';
-import Home from './pages/home'
+import HomeLogado from './pages/home_logado'
+import HomeDeslogado from './pages/home'
 import Forgot from './pages/forgot'
 import Reset from './pages/reset'
-
+import Cadastro_prod from './pages/cadastro_prod'
+import Search from './pages/search'
+import ProdutosBusca from './pages/produtos_busca'
 
 export default class Routes extends Component {
 	constructor() {
@@ -15,12 +18,14 @@ export default class Routes extends Component {
 
 		this.state = {
 			logged_in: "nao_logado",
-			departamento: {}
+			departamento: {},
+			produtos: {}
 		};
 		
 		this.handeLogin = this.handleLogin.bind(this);
 		this.handeLogout = this.handleLogout.bind(this);
 		this.loginStatus = this.loginStatus.bind(this);
+		this.handleItens = this.handleItens.bind(this);
 	}
 	
 	loginStatus(){
@@ -55,7 +60,12 @@ export default class Routes extends Component {
 			});
 			
 		}
-		
+	handleItens(data){
+			this.setState({
+				produtos: data
+			})
+	}
+
 	handleLogout() {
 			this.setState({
 				logged_in: "nao_logado",
@@ -68,16 +78,27 @@ export default class Routes extends Component {
     	return (
 	        <BrowserRouter>
 				<Switch>
+
 					<Route 
 						path='/' 
+						exact 
+						render={props => (
+							<HomeDeslogado {... props} 
+								logged_in = {this.state.logged_in}
+								departamento={this.state.departamento} />
+							)}
+					/>
+
+					<Route 
+						path='/login' 
 						exact 
 						render={props => (
 							<Login {... props} 
 								handleLogin = {this.handleLogin.bind(this)} 
 								logged_in={this.state.logged_in} />
 							)}
+					/>
 
-						/>
 					<Route 
 						path='/register' 
 						exact 
@@ -85,34 +106,70 @@ export default class Routes extends Component {
 							<Register {... props} 
 							logged_in={this.state.logged_in} />
 							)}
-						/>
+					/>
+
 					<Route 
 						path='/home' 
 						exact 
 						render={props => (
-							<Home {... props} 
+							<HomeLogado {... props} 
 								logged_in = {this.state.logged_in}
 								departamento={this.state.departamento} 
 								handleLogout = {this.handleLogout.bind(this)}/>
 							)}
+					/>
 
-						/>
+					<Route 
+						path='/cadastro_prod' 
+						exact 
+						render={props => (
+							<Cadastro_prod {... props} 
+								logged_in = {this.state.logged_in}
+								departamento={this.state.departamento} 
+								handleLogout = {this.handleLogout.bind(this)}/>
+							)}
+					/>
+
+					<Route 
+						path='/search' 
+						exact 
+						render={props => (
+							<Search {... props} 
+								logged_in = {this.state.logged_in}
+								departamento={this.state.departamento} 
+								handleLogout = {this.handleLogout.bind(this)}
+								handleItens = {this.handleItens.bind(this)}/>
+							)}
+					/>
+
+					<Route 
+						path='/produtos-busca' 
+						exact 
+						render={props => (
+							<ProdutosBusca {... props} 
+								logged_in = {this.state.logged_in}
+								departamento={this.state.departamento}
+								produtos={this.state.produtos} 
+								handleLogout = {this.handleLogout.bind(this)}/>
+							)}
+					/>
+
 					<Route 
 						path='/forgot' 
 						exact 
 						render={props => (
 							<Forgot {... props}/>
 							)}
+					/>
 
-						/>
 					<Route 
 						path='/reset' 
 						exact 
 						render={props => (
 							<Reset {... props}/>
 							)}
+					/>
 
-						/>
 				</Switch>
 	        </BrowserRouter>
     	);
