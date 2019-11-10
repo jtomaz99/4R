@@ -26,7 +26,6 @@ export default class Home extends Component {
 	}	
 	componentDidMount(){
 		console.log(this.props.produtos)
-		typeof(this.props.produtos)
 	}
 
 	handlePesquisarClick(){
@@ -59,7 +58,7 @@ export default class Home extends Component {
 					</div>
 					<div className="col">
 						<h1>PRODUTINHOS</h1>
-						//<ListProdutos produtos={this.props.produtos}/>
+						<ListProdutos produtos={this.props.produtos}/>
 					</div>
 				</div>
             </div>
