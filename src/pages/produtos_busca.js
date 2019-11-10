@@ -4,11 +4,16 @@ import axios from 'axios';
 import './home.css';
 import logo from '../assets/logo.svg';
 import teste from '../assets/background.jpg';
-//import ListProdutos from '../components/listProdutos.js'
+import Popup from '../components/popup.js'
 
 export default class Home extends Component {
     constructor(props) {
         super(props); 
+
+        this.state = {
+        	donoP: 'Envie um e-mail para: '
+        }
+
 		this.handleLogoutClick = this.handleLogoutClick.bind(this);
 		this.handlePesquisarClick = this.handlePesquisarClick.bind(this);
 		this.solicitarItem = this.solicitarItem.bind(this);
@@ -30,9 +35,18 @@ export default class Home extends Component {
 	}
 
 	solicitarItem(dono){
-		return
+		this.setState({
+			donoP: this.state.donoP + dono
+		})
+		this.togglePopup()
 
 	}
+
+	togglePopup() {  
+        this.setState({  
+            showPopup: !this.state.showPopup  
+        })
+    }  
 
 	handlePesquisarClick(){
 		this.props.history.push("/search");
@@ -71,6 +85,8 @@ export default class Home extends Component {
 				    			</div>
 				    })}
 				</div>
+				{this.state.showPopup ? <Popup text= {this.state.donoP}
+                            closePopup={this.togglePopup.bind(this)}/>: null}
             </div>
         );
     }
