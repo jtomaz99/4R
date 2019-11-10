@@ -58,7 +58,7 @@ export default class Home extends Component {
 					</div>
 					<div className="col">
 						<h1>PRODUTINHOS</h1>
-						<ListProdutos data={this.props.produtos}/>
+						<ListProdutos produtos={this.props.produtos}/>
 					</div>
 				</div>
             </div>
