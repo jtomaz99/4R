@@ -4,7 +4,7 @@ function ListProdutos(produtos) {
 	return (
 	<div>
     {produtos.map((produto, index) => {
-    	return <h1>{produto.nome}</h1>
+    	return <h1>{produto.nome_prod}</h1>
     })}
     </div> 
     )
