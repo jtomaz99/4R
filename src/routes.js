@@ -85,7 +85,8 @@ export default class Routes extends Component {
 						render={props => (
 							<HomeDeslogado {... props} 
 								logged_in = {this.state.logged_in}
-								departamento={this.state.departamento} />
+								departamento={this.state.departamento} 
+								loginStatus = {this.loginStatus.bind(this)}/>
 							)}
 					/>
 

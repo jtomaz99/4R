@@ -4,6 +4,7 @@ import axios from 'axios';
 import './home.css';
 import logo from '../assets/logo.svg';
 import teste from '../assets/background.jpg';
+import listProdutos from '../components/listProdutos.js'
 
 export default class Home extends Component {
     constructor(props) {
@@ -25,6 +26,7 @@ export default class Home extends Component {
 	}	
 	componentDidMount(){
 		console.log(this.props.produtos)
+		this.props.loginStatus();
 	}
 
 	handlePesquisarClick(){
@@ -57,8 +59,7 @@ export default class Home extends Component {
 					</div>
 					<div className="col">
 						<h1>PRODUTINHOS</h1>
-						<p>RESULTADO DA BUSCA</p>
-						//{this.props.produtos.map(produto => <div>{produto.name}</div>)}
+						<listProdutos data={this.props.produtos}/>
 					</div>
 				</div>
             </div>
