@@ -53,9 +53,6 @@ export default class Home extends Component {
 					<div className="col-md-4 col-sm-4 col-xs-6">
 						<button type="button" className="btn btn-success item" onClick={() => this.handleLogoutClick()} >Sair</button>
 					</div>
-					<div>
-						<img className="logo" src={teste}/>
-					</div>
 				</div>
 				<div>
 					<h1>Resultado da busca</h1>
