@@ -11,3 +11,4 @@ function ListProdutos(produtos) {
 }
 
 export default ListProdutos
+						//<ListProdutos data={this.props.produtos}/>
