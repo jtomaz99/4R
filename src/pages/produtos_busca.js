@@ -63,7 +63,7 @@ export default class Home extends Component {
 					    			<h2>Nome: {produto.nome_prod}</h2>
 					    			<h2>Descrição: {produto.descricao}</h2>
 					    			<h2>Categoria: {produto.categoria}</h2>
-					    			</br>
+					    			<br>
 					    			</div>
 					    })}
 					</div>
