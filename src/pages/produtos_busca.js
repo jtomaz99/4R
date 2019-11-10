@@ -58,6 +58,9 @@ export default class Home extends Component {
 					</div>
 					<div className="col">
 						<h1>PRODUTINHOS</h1>
+						{this.props.produtos.map((produto, index) => {
+					    	return <h1>{produto.nome_prod}</h1>
+					    })}
 					</div>
 				</div>
             </div>
