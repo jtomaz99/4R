@@ -11,7 +11,7 @@ export default class Home extends Component {
         super(props); 
 
         this.state = {
-        	donoP: 'Envie um e-mail para: '
+        	donoP: 'Escreva sua solicitação e envie um e-mail para: '
         }
 
 		this.handleLogoutClick = this.handleLogoutClick.bind(this);
@@ -81,7 +81,7 @@ export default class Home extends Component {
 				    			<h2>Nome: {produto.nome_prod}</h2>
 				    			<h2>Descrição: {produto.descricao}</h2>
 				    			<h2>Categoria: {produto.categoria}</h2>
-				    			<button type="button" className="btn btn-success item" onClick={() => this.solicitarItem(produto.dono_prod)} >Solicitar Produto</button>
+				    			<button type="button" className="btn btn-success item" onClick={() => this.solicitarItem(produto.dono_produto)} >Solicitar Produto</button>
 				    			</div>
 				    })}
 				</div>
