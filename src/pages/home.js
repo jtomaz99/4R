@@ -16,6 +16,7 @@ export default class HomeDeslogado extends Component {
 	} 
 	
 	componentDidMount(){
+		this.props.loginStatus();
 		console.log(this.props.logged_in)
 		console.log(this.props.logged_in === "logado")
 		if (this.props.logged_in === "logado")

@@ -26,7 +26,6 @@ export default class Home extends Component {
 	}	
 	componentDidMount(){
 		console.log(this.props.produtos)
-		this.props.loginStatus();
 	}
 
 	handlePesquisarClick(){
