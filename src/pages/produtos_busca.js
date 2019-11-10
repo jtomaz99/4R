@@ -11,6 +11,7 @@ export default class Home extends Component {
         super(props); 
 		this.handleLogoutClick = this.handleLogoutClick.bind(this);
 		this.handlePesquisarClick = this.handlePesquisarClick.bind(this);
+		this.solicitarItem = this.solicitarItem.bind(this);
     }
 	
 	handleLogoutClick(){
@@ -26,6 +27,11 @@ export default class Home extends Component {
 	}	
 	componentDidMount(){
 		console.log(this.props.produtos)
+	}
+
+	solicitarItem(dono){
+		return
+
 	}
 
 	handlePesquisarClick(){
@@ -61,6 +67,7 @@ export default class Home extends Component {
 				    			<h2>Nome: {produto.nome_prod}</h2>
 				    			<h2>Descrição: {produto.descricao}</h2>
 				    			<h2>Categoria: {produto.categoria}</h2>
+				    			<button type="button" className="btn btn-success item" onClick={() => this.solicitarItem(produto.dono_prod)} >Solicitar Produto</button>
 				    			</div>
 				    })}
 				</div>

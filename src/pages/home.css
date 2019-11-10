@@ -78,7 +78,7 @@ body, input, button {
 }
 
 .results{
-    border: 1px solid red;
+    border: 1px solid green;
     align-items: center;
     background-color:   #fff;
     color: #000;
