@@ -16,7 +16,7 @@ class Popup extends React.Component {
 						<p>{this.props.text}</p>
 					 </div>
 					  <div class="modal-footer">
-						<button type="button" class="btn btn-primary" data-dismiss="modal" onClick={this.props.closePopup} >Fechar</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal" onClick={this.props.closePopup} >Fechar </button>
 					 </div>
 				</div>
 			  </div>
