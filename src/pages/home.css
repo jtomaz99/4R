@@ -78,9 +78,5 @@ body, input, button {
 }
 
 .results{
-    border: 1px solid green;
-    align-items: center;
-    background-color:   #fff;
-    color: #000;
     width: 18rem;
 }
