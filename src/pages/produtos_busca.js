@@ -77,11 +77,11 @@ export default class Home extends Component {
 				<div>
 					<h1>Resultado da busca</h1>
 					{this.props.produtos.map((produto, index) => {
-						return <div class="card">
-								<div class="card-body">
-						  			<h5 class="card-title">{produto.nome_prod}</h5>
-						  			<p class="card-text">Descrição: {produto.descricao}</p>
-									<p class="card-text">Categoria: {produto.categoria}</p>
+						return <div className="card" className="results" >
+								<div className="card-body">
+						  			<h5 className="card-title">{produto.nome_prod}</h5>
+						  			<p className="card-text">Descrição: {produto.descricao}</p>
+									<p className="card-text">Categoria: {produto.categoria}</p>
 									<button type="button" class="btn btn-primary" onClick={() => this.solicitarItem(produto.dono_produto)} >Solicitar Produto</button>
 								</div>
 					  		   </div>
