@@ -77,3 +77,10 @@ body, input, button {
     background-image: url(../assets/background.jpg) ;
 }
 
+.results{
+    border: 1px solid green;
+    align-items: center;
+    background-color:   #fff;
+    color: #000;
+    width: 100%;
+}

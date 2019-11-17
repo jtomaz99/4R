@@ -10,7 +10,7 @@ export default class Search extends Component {
 
         this.state = {
             nome: "",
-            produtos: {}
+            produtos: []
         }
 
         this.itemSucess = this.itemSucess.bind(this);
