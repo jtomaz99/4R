@@ -16,7 +16,7 @@
   </tr>
   <tr>
     <td colspan="2"><b>Decisões tomadas</b></td>
-    <td colspan="7">- Primeiras HU's a serem implementadas sarão login e cadastro de usuário;<br>
+    <td colspan="7">- Primeiras HU's a serem implementadas serão login e cadastro de usuário;<br>
 - Utilização do Heroku como ambiente de desenvolvimento;<br>
 - Banco de dados será implementado no inicio do desenvolvimento (junto com o deploy da aplicação do heroku);<br>
 </td>
