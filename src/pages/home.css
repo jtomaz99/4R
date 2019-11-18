@@ -79,4 +79,9 @@ body, input, button {
 
 .results{
     width: 18rem;
+    float: left;
+}
+
+.container-items{
+    background-color: white;
 }
