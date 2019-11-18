@@ -83,17 +83,6 @@ export default class Routes extends Component {
 						path='/' 
 						exact 
 						render={props => (
-							<HomeDeslogado {... props} 
-								logged_in = {this.state.logged_in}
-								departamento={this.state.departamento} 
-								loginStatus = {this.loginStatus.bind(this)}/>
-							)}
-					/>
-
-					<Route 
-						path='/login' 
-						exact 
-						render={props => (
 							<Login {... props} 
 								handleLogin = {this.handleLogin.bind(this)} 
 								logged_in={this.state.logged_in} />

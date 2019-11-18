@@ -74,7 +74,7 @@ body, input, button {
  }
 
 .fundo{
-    background-image: url(../assets/background.jpg) ;
+    background-color: #dcdcdc ;
 }
 
 .results{
