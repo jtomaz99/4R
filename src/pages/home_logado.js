@@ -28,6 +28,10 @@ export default class HomeLogado extends Component {
 	handlePesquisarClick(){
 		this.props.history.push("/search")
 	}
+
+	handleRegisterProductClick(){
+		this.props.history.push("/cadastro_prod")
+	}
 	
     render () {
         return(
@@ -52,7 +56,9 @@ export default class HomeLogado extends Component {
 						<button type="button" className="btn btn-success item" onClick={() => this.handleLogoutClick()} >Sair</button>
 					</div>
 					<div>
-						<div className="row container-items"></div>
+						<div className="row container-items">
+							<button type="button" className="btn btn-success item" onClick={() => this.handleRegisterProductClick()} >Cadastrar seu produto</button>
+						</div>
 					</div>
 				</div>
 
