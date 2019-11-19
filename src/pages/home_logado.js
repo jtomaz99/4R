@@ -52,7 +52,7 @@ export default class HomeLogado extends Component {
 						<button type="button" className="btn btn-success item" onClick={() => this.handleLogoutClick()} >Sair</button>
 					</div>
 					<div>
-						<img className="logo" src={teste}/>
+						<div className="row container-items"></div>
 					</div>
 				</div>
 
