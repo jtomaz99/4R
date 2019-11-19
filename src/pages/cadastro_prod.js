@@ -89,7 +89,7 @@ export default class Cadastro_prod extends Component {
                 <nav className="navbar-home navbar-light navbar">
 				    <img className="logo logo-others" src={logo}/>
 				</nav>
-                <form onSubmit={this.handleSubmit}>
+                <form id="form_prod" onSubmit={this.handleSubmit}>
                     <img src={logo} alt="FOURR"/>
                     <h5><b>Cadastrar Produto</b></h5>
                     
@@ -122,6 +122,7 @@ export default class Cadastro_prod extends Component {
                     />
 
                     <input 
+                    id="upload_img"
                     placeholder="imagem"
                     type="file"
                     onChange={this.fileSelectedHandler}
