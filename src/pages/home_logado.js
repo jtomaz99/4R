@@ -11,6 +11,8 @@ export default class HomeLogado extends Component {
         
 		this.handleLogoutClick = this.handleLogoutClick.bind(this);
 		this.handlePesquisarClick = this.handlePesquisarClick.bind(this);
+		this.meusItens = this.meusItens.bind(this);
+		this.meusItensSucess = this.meusItensSucess.bind(this);
     }
 	
 	handleLogoutClick(){
@@ -24,7 +26,31 @@ export default class HomeLogado extends Component {
 			})		
 		
 	}
+	
+	meusItensSucess(produtos){
+        this.setState({
+            produtos: produtos
+        })
+        this.props.handleItens(produtos);
+        this.props.history.push("/meus-itens");
+	}
 
+	
+	meusItens() {    
+        axios.post(
+            "https://fourr-api.herokuapp.com/searchdono/",{
+                dono:{dono: this.props.departamento.email}},
+            {withCredentials: true}
+        ).then(response => {
+            if (response.data.status === true){
+            this.meusItensSucess(response.data.produtos);
+            }
+        }).catch(error => {
+            console.log("error message",error)
+        })
+
+    }
+	
 	handlePesquisarClick(){
 		this.props.history.push("/search")
 	}
@@ -46,6 +72,10 @@ export default class HomeLogado extends Component {
 
 					<div className="col-md-4 col-sm-4 col-xs-6">
 						<button type="button" className="btn btn-success item" onClick={() => this.handlePesquisarClick()} >Pesquisar</button>
+					</div>
+					
+					<div className="col-md-4 col-sm-4 col-xs-6">
+						<button type="button" className="btn btn-success item" onClick={() => this.meusItens()} >Meus Itens</button>
 					</div>
 
 					<div className="col-md-4 col-sm-4 col-xs-6">
