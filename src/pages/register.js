@@ -17,7 +17,7 @@ export default class Register extends Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
-        this.handleChange = this.RegisterSucesso.bind(this);
+        /*this.handleChange = this.RegisterSucesso.bind(this);*/
 
     }
 

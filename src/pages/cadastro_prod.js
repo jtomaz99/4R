@@ -89,12 +89,13 @@ export default class Cadastro_prod extends Component {
                 <nav className="navbar-home navbar-light navbar">
 				    <img className="logo logo-others" src={logo}/>
 				</nav>
-                <form onSubmit={this.handleSubmit}>
+                <form id="form_prod" onSubmit={this.handleSubmit}>
                     <img src={logo} alt="FOURR"/>
                     <h5><b>Cadastrar Produto</b></h5>
                     
                     <input 
                     placeholder="Nome do Produto"
+                    id="name"
                     name= "nome_prod"
                     value={this.state.nome_prod}
                     onChange={this.handleChange}
@@ -103,6 +104,7 @@ export default class Cadastro_prod extends Component {
 
                     <input 
                     placeholder="Categoria"
+                    id="category"
                     name= "categoria"
                     value={this.state.categoria}
                     onChange={this.handleChange}
@@ -112,6 +114,7 @@ export default class Cadastro_prod extends Component {
                     <input 
                     placeholder="Descricao"
                     name= "descricao"
+                    id="description"
                     value={this.state.descricao}
                     type="text"
                     onChange={this.handleChange}
@@ -119,12 +122,13 @@ export default class Cadastro_prod extends Component {
                     />
 
                     <input 
+                    id="upload_img"
                     placeholder="imagem"
                     type="file"
                     onChange={this.fileSelectedHandler}
                     required
                     />
-                    <button type="submit">Cadastrar</button>
+                    <button id="SubmitProd" type="submit">Cadastrar</button>
                 </form>
                 {this.state.showPopup ? <Popup text='Faça login para cadastrar um produto!'  
                             closePopup={this.togglePopup.bind(this)}/>: null}

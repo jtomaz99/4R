@@ -5,7 +5,6 @@ import axios from 'axios';
 import Login from './pages/login';
 import Register from './pages/register';
 import HomeLogado from './pages/home_logado'
-import HomeDeslogado from './pages/home'
 import Forgot from './pages/forgot'
 import Reset from './pages/reset'
 import Cadastro_prod from './pages/cadastro_prod'
@@ -81,17 +80,6 @@ export default class Routes extends Component {
 
 					<Route 
 						path='/' 
-						exact 
-						render={props => (
-							<HomeDeslogado {... props} 
-								logged_in = {this.state.logged_in}
-								departamento={this.state.departamento} 
-								loginStatus = {this.loginStatus.bind(this)}/>
-							)}
-					/>
-
-					<Route 
-						path='/login' 
 						exact 
 						render={props => (
 							<Login {... props} 

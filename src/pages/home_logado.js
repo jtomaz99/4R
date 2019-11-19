@@ -11,6 +11,8 @@ export default class HomeLogado extends Component {
         
 		this.handleLogoutClick = this.handleLogoutClick.bind(this);
 		this.handlePesquisarClick = this.handlePesquisarClick.bind(this);
+		this.meusItens = this.meusItens.bind(this);
+		this.meusItensSucess = this.meusItensSucess.bind(this);
     }
 	
 	handleLogoutClick(){
@@ -24,9 +26,37 @@ export default class HomeLogado extends Component {
 			})		
 		
 	}
+	
+	meusItensSucess(produtos){
+        this.setState({
+            produtos: produtos
+        })
+        this.props.handleItens(produtos);
+        this.props.history.push("/meus-itens");
+	}
 
+	
+	meusItens() {    
+        axios.post(
+            "https://fourr-api.herokuapp.com/searchdono/",{
+                dono:{dono: this.props.departamento.email}},
+            {withCredentials: true}
+        ).then(response => {
+            if (response.data.status === true){
+            this.meusItensSucess(response.data.produtos);
+            }
+        }).catch(error => {
+            console.log("error message",error)
+        })
+
+    }
+	
 	handlePesquisarClick(){
 		this.props.history.push("/search")
+	}
+
+	handleRegisterProductClick(){
+		this.props.history.push("/cadastro_prod")
 	}
 	
     render () {
@@ -35,13 +65,17 @@ export default class HomeLogado extends Component {
             <div className="container-fluid fundo">
 
 				<nav className="navbar-home navbar-light navbar">
-					<h1 className="welcome">Bem vindo, {this.props.departamento.nome}</h1>
+					<h1 className="welcome">4R</h1>
 				</nav>
 
 				<div className="row">
 
 					<div className="col-md-4 col-sm-4 col-xs-6">
 						<button type="button" className="btn btn-success item" onClick={() => this.handlePesquisarClick()} >Pesquisar</button>
+					</div>
+					
+					<div className="col-md-4 col-sm-4 col-xs-6">
+						<button type="button" className="btn btn-success item" onClick={() => this.meusItens()} >Meus Itens</button>
 					</div>
 
 					<div className="col-md-4 col-sm-4 col-xs-6">
@@ -52,7 +86,9 @@ export default class HomeLogado extends Component {
 						<button type="button" className="btn btn-success item" onClick={() => this.handleLogoutClick()} >Sair</button>
 					</div>
 					<div>
-						<img className="logo" src={teste}/>
+						<div className="row container-items">
+							<button type="button" className="btn btn-success item" onClick={() => this.handleRegisterProductClick()} >Cadastrar seu produto</button>
+						</div>
 					</div>
 				</div>
 

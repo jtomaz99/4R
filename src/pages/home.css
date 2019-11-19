@@ -74,13 +74,14 @@ body, input, button {
  }
 
 .fundo{
-    background-image: url(../assets/background.jpg) ;
+    background-color: #F5F5F5 ;
 }
 
 .results{
-    border: 1px solid green;
-    align-items: center;
-    background-color:   #fff;
-    color: #000;
-    width: 100%;
+    width: 18rem;
+    float: left;
+}
+
+.container-items{
+    background-color: #dcdcdc;
 }
