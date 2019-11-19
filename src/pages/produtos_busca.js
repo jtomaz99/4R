@@ -95,7 +95,7 @@ export default class Home extends Component {
 					</div>
 				</div>
 
-				{this.state.showPopup ? <Popup text= {this.state.donoP}
+				{this.state.showPopup ? <Popup text= {this.state.donoP + "teste"}
                             closePopup={this.togglePopup.bind(this)}/>: null}
             </div>
         );
