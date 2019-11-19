@@ -95,6 +95,7 @@ export default class Cadastro_prod extends Component {
                     
                     <input 
                     placeholder="Nome do Produto"
+                    id="name"
                     name= "nome_prod"
                     value={this.state.nome_prod}
                     onChange={this.handleChange}
@@ -103,6 +104,7 @@ export default class Cadastro_prod extends Component {
 
                     <input 
                     placeholder="Categoria"
+                    id="category"
                     name= "categoria"
                     value={this.state.categoria}
                     onChange={this.handleChange}
@@ -112,6 +114,7 @@ export default class Cadastro_prod extends Component {
                     <input 
                     placeholder="Descricao"
                     name= "descricao"
+                    id="description"
                     value={this.state.descricao}
                     type="text"
                     onChange={this.handleChange}
@@ -124,7 +127,7 @@ export default class Cadastro_prod extends Component {
                     onChange={this.fileSelectedHandler}
                     required
                     />
-                    <button type="submit">Cadastrar</button>
+                    <button id="SubmitProd" type="submit">Cadastrar</button>
                 </form>
                 {this.state.showPopup ? <Popup text='Faça login para cadastrar um produto!'  
                             closePopup={this.togglePopup.bind(this)}/>: null}

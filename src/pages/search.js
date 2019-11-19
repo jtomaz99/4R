@@ -63,12 +63,13 @@ export default class Search extends Component {
                     
                     <input 
                     placeholder="Nome do produto"
+                    id="search"
                     name= "nome"
                     value={this.state.nome}
                     onChange={this.handleChange}
                     required
                     />
-                    <button type="submit">Pesquisar</button>
+                    <button id="SubmitSearch" type="submit">Pesquisar</button>
                 </form>
             </div>
         );
