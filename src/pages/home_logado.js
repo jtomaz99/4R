@@ -35,7 +35,7 @@ export default class HomeLogado extends Component {
             <div className="container-fluid fundo">
 
 				<nav className="navbar-home navbar-light navbar">
-					<h1 className="welcome">Bem vindo, {this.props.departamento.nome}</h1>
+					<h1 className="welcome">4R</h1>
 				</nav>
 
 				<div className="row">
