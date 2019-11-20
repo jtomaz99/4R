@@ -37,6 +37,10 @@ export default class Cadastro_prod extends Component {
         })
     }  
 
+    RegisterProdSucesso(){
+        this.props.history.push("/home");
+    }
+
     fileSelectedHandler(event){
             this.setState({
                 imagem: event.target.files[0]
@@ -66,6 +70,7 @@ export default class Cadastro_prod extends Component {
                         "https://fourr-api.herokuapp.com/new_img/",fd,{withCredentials: true}
                         ).then(response => {
                             console.log("response",response.data)
+                            this.RegisterProdSucesso();
                         }
                         ).catch(error => {
                             console.log("error message",error)
