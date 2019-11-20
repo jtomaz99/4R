@@ -1,7 +1,7 @@
 import React from 'react';  
 
 class Popup extends React.Component {  
-	render() {  
+  render() {  
 		return (  
 			<div className='popup'>  
 			<div className='popup\_inner'>  
@@ -13,5 +13,4 @@ class Popup extends React.Component {
 		}  
 		}  
 
-
-export default Popup;
+export default Popup; 

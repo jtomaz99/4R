@@ -10,7 +10,7 @@ export default class Home extends Component {
         super(props); 
 
         this.state = {
-        	donoP: 'Escreva sua solicitação e envie um e-mail para: '
+        	donoP: "Escreva sua solicitação e envie um e-mail para: "
         }
 
 		this.handleLogoutClick = this.handleLogoutClick.bind(this);
@@ -43,13 +43,12 @@ export default class Home extends Component {
 
 	togglePopup() {  
         this.setState({  
-            showPopup: !this.state.showPopup  
+			showPopup: !this.state.showPopup,
+			donoP: this.state.donoP
         })
     }  
 
-	handlePesquisarClick(){
-		this.props.history.push("/search");
-	}
+	 
     render () {
         return(
 			
@@ -101,7 +100,7 @@ export default class Home extends Component {
 					</div>
 				</div>
 
-				{this.state.showPopup ? <Popup text= {this.state.donoP + "teste"}
+				{this.state.showPopup ? <Popup text= {this.state.donoP}
                             closePopup={this.togglePopup.bind(this)}/>: null}
             
 			</div>
