@@ -3,7 +3,6 @@ import axios from 'axios';
 
 import './home.css';
 import logo from '../assets/logo.svg';
-import teste from '../assets/background.jpg';
 import Popup from '../components/popup.js'
 
 export default class Home extends Component {
@@ -56,24 +55,31 @@ export default class Home extends Component {
 			
             <div className="container-fluid fundo">
 
-				<nav className="navbar-home navbar-light navbar">
-					<h1 className="welcome">4R</h1>
-				</nav>
+				<nav className="navbar navbar-expand-md navbar-dark fixed-top new-navbar">
+					<a className="navbar-brand" href="/home">4R</a>
+    				<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      				<span className="navbar-toggler-icon"></span>
+   				 	</button>
+						<div className="collapse navbar-collapse" id="navbarCollapse">
+							<ul className="navbar-nav mr-auto">
+							</ul>
+							<form className="form-inline mt-2 mt-md-0">
+								<button type="button" className="btn btn-link my-2 my-sm-0 item" onClick={() => this.handlePesquisarClick()} >Pesquisar</button>
+								<button type="button" className="btn btn-link my-2 my-sm-0 item" onClick={() => this.handleRegisterProductClick()} >Cadastrar seu produto</button>
+								<button type="button" className="btn btn-link my-2 my-sm-0 item" onClick={() => this.meusItens()} >Meus Itens</button>
+								<button type="button" className="btn btn-link my-2 my-sm-0 item" onClick={() => this.handleLogoutClick()} >Sair</button>
 
+							</form>
+						</div>
+				</nav>
+				
 				<div className="row">
 
-					<div className="col-md-4 col-sm-4 col-xs-6">
-						<button type="button" className="btn btn-success item" onClick={() => this.handlePesquisarClick()} >Pesquisar Outros</button>
-					</div>
-
-					<div className="col-md-4 col-sm-4 col-xs-6">
+					<div className="col-sm">
 						<img className="logo" src={logo}/>
 					</div>
-
-					<div className="col-md-4 col-sm-4 col-xs-6">
-						<button type="button" className="btn btn-success item" onClick={() => this.handleLogoutClick()} >Sair</button>
-					</div>
 				</div>
+
 				<div className="container-items">
 					<h1>Resultado da busca</h1>
 					<div className="row">
@@ -97,7 +103,8 @@ export default class Home extends Component {
 
 				{this.state.showPopup ? <Popup text= {this.state.donoP + "teste"}
                             closePopup={this.togglePopup.bind(this)}/>: null}
-            </div>
+            
+			</div>
         );
     }
 }

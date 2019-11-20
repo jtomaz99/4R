@@ -36,12 +36,11 @@ body, input, button {
     width: 100%;
 }
 
-.item {
-    margin:75px auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.new-navbar {
     background-color: 	#9DDA95;
+}
+.item {
+    color: 	white;
 }
 
 .logo {
@@ -84,4 +83,8 @@ body, input, button {
 
 .container-items{
     background-color: #dcdcdc;
+}
+
+.teste-margin{
+    margin-top: 50px;
 }

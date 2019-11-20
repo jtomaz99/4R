@@ -10,7 +10,7 @@ import Reset from './pages/reset'
 import Cadastro_prod from './pages/cadastro_prod'
 import Search from './pages/search'
 import ProdutosBusca from './pages/produtos_busca'
-import meusItens from './pages/meus-itens'
+/*import meusItens from './pages/meus-itens' por enquanto que n tem rota*/
 
 export default class Routes extends Component {
 	constructor() {
@@ -160,17 +160,7 @@ export default class Routes extends Component {
 							)}
 					/>
 						
-					<Route 
-						path='/meus-itens' 
-						exact 
-						render={props => (
-							<MeusItens {... props} 
-								logged_in = {this.state.logged_in}
-								departamento={this.state.departamento}
-								produtos={this.state.produtos} 
-								handleLogout = {this.handleLogout.bind(this)}/>
-							)}
-					/>
+				
 					
 				</Switch>
 	        </BrowserRouter>
