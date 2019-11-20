@@ -21,5 +21,9 @@
 // Cypress.Commands.add("dismiss", { prevSubject: 'optional'}, (subject, options) => { ... })
 //
 //
+<<<<<<< HEAD
 // -- This is will overwrite an existing command --
+=======
+// -- This will overwrite an existing command --
+>>>>>>> Teste_01
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })

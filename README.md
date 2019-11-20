@@ -8,7 +8,7 @@ Projeto da disciplina (IF977) Engenharia de Software, do curso de graduação em
 ## :computer: Equipe
 
 - [Giovanni Correa](https://github.com/gecjcin/gecj.git) (Desenvolvedor e Tester);
-- [Ighor Honorato](https://github.com/IghorHonorato) (Desenvolvedor e Tester);
+- ~~[Ighor Honorato](https://github.com/IghorHonorato) (Desenvolvedor e Tester);~~ (Desistiu da Disciplina)
 - [Ivan Ferreira](https://github.com/ifsl2) (Desenvolvedor e Tester);
 - [José Tomáz](https://github.com/jtomaz99) (Scrum Master e Desenvolvedor);
 - [Victor Santos](https://github.com/vgss) (Product Owner e Desenvolvedor);
