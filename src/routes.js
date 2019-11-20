@@ -10,7 +10,7 @@ import Reset from './pages/reset'
 import Cadastro_prod from './pages/cadastro_prod'
 import Search from './pages/search'
 import ProdutosBusca from './pages/produtos_busca'
-import meusItens from './pages/meus_itens'
+import MeusItens from './pages/meus_itens'
 
 export default class Routes extends Component {
 	constructor() {
