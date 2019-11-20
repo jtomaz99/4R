@@ -69,7 +69,7 @@ export default class MeusItens extends Component {
 
 				<div className="row">
 
-					<div className="col-sm">
+					<div className="col-sm teste-margin">
 						<img className="logo" src={logo}/>
 					</div>
 
