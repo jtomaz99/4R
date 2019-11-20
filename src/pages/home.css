@@ -27,7 +27,10 @@ body, input, button {
 }
 
 .container {
-    border: 5px solid blue;
+
+}
+.item-footer{
+    color: black;
 }
 
 .navbar-home {
@@ -73,6 +76,8 @@ body, input, button {
  }
 
 .fundo{
+    height: 100%;
+    width: 100%;
     background-color: #F5F5F5 ;
 }
 
@@ -88,3 +93,11 @@ body, input, button {
 .teste-margin{
     margin-top: 50px;
 }
+
+.cover {
+    padding: 0 1.5rem;
+}
+
+.cover-container {
+    max-width: 42em;
+  }
