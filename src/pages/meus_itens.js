@@ -39,7 +39,6 @@ export default class MeusItens extends Component {
             produtos: produtos
         })
         this.props.handleItens(produtos);
-        window.location.reload(true)
 	}
 
 	deletarItem(produtoid,donoproduto){
