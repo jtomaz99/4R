@@ -10,8 +10,13 @@ export default class MeusItens extends Component {
     constructor(props) {
         super(props); 
 
+        this.state = {
+            produtos: []
+        }
+
 		this.handleLogoutClick = this.handleLogoutClick.bind(this);
 		this.deletarItem = this.deletarItem.bind(this);
+		this.itemSucess = this.itemSucess.bind(this);
     }
 	
 	handleLogoutClick(){
@@ -29,14 +34,22 @@ export default class MeusItens extends Component {
 		console.log(this.props.produtos)
 	}
 
-	deletarItem(produtoid){
+	itemSucess(produtos){
+        this.setState({
+            produtos: produtos
+        })
+        this.props.handleItens(produtos);
+        location.reload();
+	}
+
+	deletarItem(produtoid,donoproduto){
 		axios.post(
             "https://fourr-api.herokuapp.com/deleteitem",{
-                produto:{id: produtoid}},
+                produto:{id: produtoid,dono: donoproduto}},
             {withCredentials: true}
         ).then(response => {
             if (response.data.status === true){
-            this.itemSucess(produtoid);
+            this.itemSucess(response.data.produtos);
             }
         }).catch(error => {
             console.log("error message",error)
@@ -68,7 +81,7 @@ export default class MeusItens extends Component {
 				    			<h2>Nome: {produto.nome_prod}</h2>
 				    			<h2>Descrição: {produto.descricao}</h2>
 				    			<h2>Categoria: {produto.categoria}</h2>
-				    			<button type="button" className="btn btn-success item" onClick={() => this.deletarItem(produto.id)} >Deletar Produto</button>
+				    			<button type="button" className="btn btn-success item" onClick={() => this.deletarItem(produto.id, produto.dono_produto)} >Deletar Produto</button>
 				    			</div>
 				    })}
 				</div>

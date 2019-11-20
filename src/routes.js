@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+ import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import axios from 'axios';
 
@@ -105,6 +105,7 @@ export default class Routes extends Component {
 							<HomeLogado {... props} 
 								logged_in = {this.state.logged_in}
 								departamento={this.state.departamento} 
+								handleItens = {this.handleItens.bind(this)}
 								handleLogout = {this.handleLogout.bind(this)}/>
 							)}
 					/>
@@ -168,6 +169,7 @@ export default class Routes extends Component {
 								logged_in = {this.state.logged_in}
 								departamento={this.state.departamento}
 								produtos={this.state.produtos} 
+								handleItens = {this.handleItens.bind(this)}
 								handleLogout = {this.handleLogout.bind(this)}/>
 							)}
 					/>
