@@ -8,6 +8,11 @@
     "@fortawesome/react-fontawesome": "^0.1.4",
     "axios": "^0.19.0",
     "axios-on-rails": "0.0.1",
+<<<<<<< HEAD
+    "cypress": "^3.4.1",
+=======
+    "cypress": "^3.6.1",
+>>>>>>> Teste_01
     "node-sass": "^4.12.0",
     "react": "^16.9.0",
     "react-bootstrap": "^1.0.0-beta.12",

@@ -61,6 +61,7 @@ export default class Register extends Component {
                     <h5><b>Crie sua conta</b></h5>
                     
                     <input 
+                    id="name"
                     placeholder="Nome"
                     name= "nome"
                     value={this.state.nome}
@@ -69,6 +70,7 @@ export default class Register extends Component {
                     />
 
                     <input 
+                    id="email"
                     placeholder="E-Mail"
                     name= "email"
                     value={this.state.email}
@@ -78,6 +80,7 @@ export default class Register extends Component {
                     />
 
                     <input 
+                    id="password"
                     placeholder="Senha"
                     name= "password"
                     value={this.state.password}
@@ -87,6 +90,7 @@ export default class Register extends Component {
                     />
 
                     <input 
+                    id="password_2"
                     placeholder="Confirme sua senha"
                     name="password_confirmation"
                     value={this.state.password_confirmation} 
@@ -94,7 +98,7 @@ export default class Register extends Component {
                     onChange={this.handleChange}
                     required
                     />
-                    <button type="submit">Criar Conta</button>
+                    <button id="create" type="submit">Criar Conta</button>
                 </form>
             </div>
         );

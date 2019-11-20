@@ -63,6 +63,7 @@ export default class Login extends Component {
                     <h5><b>Entre com sua conta</b></h5>
                     
                     <input 
+                    id="email"
                     placeholder="E-Mail"
                     name= "email"
                     value={this.state.email}
@@ -72,6 +73,7 @@ export default class Login extends Component {
                     />
                     
                     <input 
+                    id="password"
                     placeholder="Senha"
                     name= "password"
                     value={this.state.password}
@@ -79,6 +81,11 @@ export default class Login extends Component {
                     onChange={this.handleChange}
                     required
                     />
+<<<<<<< HEAD
+                    <button id="SubmitLogin" type="submit">Entrar</button>
+                </form>
+                <button id="forgot"><Link to="/forgot">Esqueci minha senha</Link></button>
+=======
                     <div className = "row">
                         <div className="col-md-6 esqueci-senha">
                             <Link to="/forgot" className="badge badge-danger text-wrap">Esqueci minha senha</Link>
@@ -92,6 +99,7 @@ export default class Login extends Component {
                     </div>
 
                 </form>
+>>>>>>> Teste_01
             </div>
         );
     }
