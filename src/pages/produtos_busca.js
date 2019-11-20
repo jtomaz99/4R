@@ -43,8 +43,7 @@ export default class Home extends Component {
 
 	togglePopup() {  
         this.setState({  
-			showPopup: !this.state.showPopup,
-			donoP: this.state.donoP
+			showPopup: !this.state.showPopup
         })
     }  
 
