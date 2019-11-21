@@ -101,7 +101,6 @@ export default class MeusItens extends Component {
 					<h1>Meus Itens</h1>
 					{this.props.produtos.map((produto, index) => {
 				    	return <div className="results">
-				    			<img class="card-img-top" src={produto.imagem}
 				    			<h2>Nome: {produto.nome_prod}</h2>
 				    			<h2>Descrição: {produto.descricao}</h2>
 				    			<h2>Categoria: {produto.categoria}</h2>
