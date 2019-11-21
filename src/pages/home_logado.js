@@ -3,7 +3,6 @@ import axios from 'axios';
 
 import './home.css';
 import logo from '../assets/logo.svg';
-import teste from '../assets/background.jpg';
 
 export default class HomeLogado extends Component {
     constructor(props) {
@@ -61,38 +60,61 @@ export default class HomeLogado extends Component {
 	
     render () {
         return(
-			
-            <div className="container-fluid fundo">
+            <div className="fundo text-center">
+				<div className="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+				<nav className="navbar navbar-expand-md navbar-dark fixed-top new-navbar">
+					<a className="navbar-brand" href="/home">4R</a>
+    				<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      				<span className="navbar-toggler-icon"></span>
+   				 	</button>
+						<div className="collapse navbar-collapse" id="navbarCollapse">
+							<ul className="navbar-nav mr-auto">
+							</ul>
+							<form className="form-inline mt-2 mt-md-0">
+								<button type="button" className="btn btn-link my-2 my-sm-0 item" onClick={() => this.handlePesquisarClick()} >Pesquisar</button>
+								<button type="button" className="btn btn-link my-2 my-sm-0 item" onClick={() => this.handleRegisterProductClick()} >Cadastrar seu produto</button>
+								<button type="button" className="btn btn-link my-2 my-sm-0 item" onClick={() => this.meusItens()} >Meus Itens</button>
+								<button type="button" className="btn btn-link my-2 my-sm-0 item" onClick={() => this.handleLogoutClick()} >Sair</button>
 
-				<nav className="navbar-home navbar-light navbar">
-					<h1 className="welcome">4R</h1>
+							</form>
+						</div>
 				</nav>
+				
 
 				<div className="row">
-
-					<div className="col-md-4 col-sm-4 col-xs-6">
-						<button type="button" className="btn btn-success item" onClick={() => this.handlePesquisarClick()} >Pesquisar</button>
-					</div>
-					
-					<div className="col-md-4 col-sm-4 col-xs-6">
-						<button type="button" className="btn btn-success item" onClick={() => this.meusItens()} >Meus Itens</button>
-					</div>
-
-					<div className="col-md-4 col-sm-4 col-xs-6">
+					<div className="col-sm teste-margin">
 						<img className="logo" src={logo}/>
-					</div>
-
-					<div className="col-md-4 col-sm-4 col-xs-6">
-						<button type="button" className="btn btn-success item" onClick={() => this.handleLogoutClick()} >Sair</button>
-					</div>
-					<div>
-						<div className="row container-items">
-							<button type="button" className="btn btn-success item" onClick={() => this.handleRegisterProductClick()} >Cadastrar seu produto</button>
-						</div>
 					</div>
 				</div>
 
+				<main role="main" className="inner cover">
+					<h1 className="cover-heading">Precisa de algum item na Universidade?</h1>
+					<p className="lead">Aqui você encontra diversos itens de departamentos da universidade para o seu departamento.</p>
+					<p className="lead">
+					<a href="#" className="btn btn-lg btn-secondary">Learn more</a>
+					</p>
+				</main>
 				
+				<footer className="container py-5 mt-auto">
+					<div className="row">
+						<div class="col-12 col-md">
+							<small className="d-block mb-3 text-muted">&copy; 2019.2</small>
+						</div>
+						<div className="col-6 col-md">
+							<button type="button" className="btn btn-link my-2 my-sm-0 item-footer" onClick={() => this.handlePesquisarClick()} >Pesquisar</button>
+						</div>
+						<div className="col-6 col-md">
+							<button type="button" className="btn btn-link my-2 my-sm-0 item-footer" onClick={() => this.handleRegisterProductClick()} >Cadastrar seu produto</button>
+						</div>
+						<div className="col-6 col-md">
+							<button type="button" className="btn btn-link my-2 my-sm-0 item-footer" onClick={() => this.meusItens()} >Meus Itens</button>
+						</div>
+						<div className="col-6 col-md">
+							<h5>Queremos passar</h5>
+						</div>
+					</div>
+				</footer>
+				</div>
             </div>
         );
     }

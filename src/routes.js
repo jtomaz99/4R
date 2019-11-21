@@ -172,8 +172,7 @@ export default class Routes extends Component {
 								handleItens = {this.handleItens.bind(this)}
 								handleLogout = {this.handleLogout.bind(this)}/>
 							)}
-					/>
-					
+					/>			
 				</Switch>
 	        </BrowserRouter>
     	);

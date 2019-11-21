@@ -63,6 +63,7 @@ export default class Login extends Component {
                     <h5><b>Entre com sua conta</b></h5>
                     
                     <input 
+                    id="email"
                     placeholder="E-Mail"
                     name= "email"
                     value={this.state.email}
@@ -72,6 +73,7 @@ export default class Login extends Component {
                     />
                     
                     <input 
+                    id="password"
                     placeholder="Senha"
                     name= "password"
                     value={this.state.password}
@@ -81,13 +83,13 @@ export default class Login extends Component {
                     />
                     <div className = "row">
                         <div className="col-md-6 esqueci-senha">
-                            <Link to="/forgot" className="badge badge-danger text-wrap">Esqueci minha senha</Link>
+                            <Link to="/forgot" className="badge badge-danger text-wrap" id="forgot">Esqueci minha senha</Link>
                         </div>
                         <div className="col-md-6 esqueci-senha">
                             <Link to="/register" className="badge badge-danger text-wrap">Não tem uma conta? Crie a sua!</Link>
                         </div>
                         <div  className="col-md-6 entrar">
-                            <button type="submit">Entrar</button>
+                            <button type="submit" id="SubmitLogin" >Entrar</button>
                         </div>
                     </div>
 

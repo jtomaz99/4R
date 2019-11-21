@@ -27,7 +27,10 @@ body, input, button {
 }
 
 .container {
-    border: 5px solid blue;
+
+}
+.item-footer{
+    color: black;
 }
 
 .navbar-home {
@@ -36,12 +39,11 @@ body, input, button {
     width: 100%;
 }
 
-.item {
-    margin:75px auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.new-navbar {
     background-color: 	#9DDA95;
+}
+.item {
+    color: 	white;
 }
 
 .logo {
@@ -74,6 +76,8 @@ body, input, button {
  }
 
 .fundo{
+    height: 100%;
+    width: 100%;
     background-color: #F5F5F5 ;
 }
 
@@ -85,3 +89,15 @@ body, input, button {
 .container-items{
     background-color: #dcdcdc;
 }
+
+.teste-margin{
+    margin-top: 50px;
+}
+
+.cover {
+    padding: 0 1.5rem;
+}
+
+.cover-container {
+    max-width: 42em;
+  }
