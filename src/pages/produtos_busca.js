@@ -98,7 +98,6 @@ export default class Home extends Component {
 						  					<h4 className="card-title">{produto.nome_prod}</h4>
 											<h5>{produto.categoria}</h5>
 						  					<p className="card-text">Descrição: {produto.descricao}</p>
-						  					<p className="card-text">link: {produto.imagem}</p>
 										</div>
 										<div class="card-footer">
 											<button type="button" class="btn btn-primary" onClick={() => this.solicitarItem(produto.dono_produto)} >Solicitar Produto</button>
