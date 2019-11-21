@@ -16,6 +16,7 @@ export default class MeusItens extends Component {
 
 		this.handleLogoutClick = this.handleLogoutClick.bind(this);
 		this.handleRegisterProduct = this.handleRegisterProduct.bind(this);
+		this.handlePesquisarClick = this.handlePesquisarClick.bind(this);
 		this.deletarItem = this.deletarItem.bind(this);
 		this.itemSucess = this.itemSucess.bind(this);
     }
@@ -39,7 +40,10 @@ export default class MeusItens extends Component {
 		this.props.history.push('/cadastro_prod')
 	}
 
-
+	handlePesquisarClick(){
+		this.props.history.push('/search')
+	}
+	
 	itemSucess(produtos){
         this.setState({
             produtos: produtos
