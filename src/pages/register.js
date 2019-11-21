@@ -45,7 +45,6 @@ export default class Register extends Component {
             this.RegisterSucesso();
         }).catch(error => {
             console.log("error message",error)
-            this.RegisterSucesso();
         })
         
         event.preventDefault();
