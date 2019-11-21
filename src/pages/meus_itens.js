@@ -97,16 +97,25 @@ export default class MeusItens extends Component {
 
 				</div>
 
-				<div>
+				<div className="container-items">
 					<h1>Meus Itens</h1>
+					<div className="row">
 					{this.props.produtos.map((produto, index) => {
-				    	return <div className="results">
-				    			<h2>Nome: {produto.nome_prod}</h2>
-				    			<h2>Descrição: {produto.descricao}</h2>
-				    			<h2>Categoria: {produto.categoria}</h2>
-				    			<button type="button" className="btn btn-success item" onClick={() => this.deletarItem(produto.id, produto.dono_produto)} >Deletar Produto</button>
-				    			</div>
+				    	return <div className="col-lg-4 col-md-6 mb-4">
+									<div className="card h-100">
+										<a href="#"><img class="card-img-top" src={produto.imagem} alt=""/></a>
+										<div className="card-body">
+						  					<h4 className="card-title">{produto.nome_prod}</h4>
+											<h5>{produto.categoria}</h5>
+						  					<p className="card-text">Descrição: {produto.descricao}</p>
+										</div>
+										<div class="card-footer">
+											<button type="button" class="btn btn-primary" onClick={() => this.deletarItem(produto.id)} >Deletar Item</button>
+              							</div>
+									</div>
+					  		   	</div>
 				    })}
+				</div>
 				</div>
             </div>
         );
