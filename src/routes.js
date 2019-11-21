@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+ import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import axios from 'axios';
 
@@ -10,7 +10,7 @@ import Reset from './pages/reset'
 import Cadastro_prod from './pages/cadastro_prod'
 import Search from './pages/search'
 import ProdutosBusca from './pages/produtos_busca'
-/*import meusItens from './pages/meus-itens' por enquanto que n tem rota*/
+import MeusItens from './pages/meus_itens'
 
 export default class Routes extends Component {
 	constructor() {
@@ -105,6 +105,7 @@ export default class Routes extends Component {
 							<HomeLogado {... props} 
 								logged_in = {this.state.logged_in}
 								departamento={this.state.departamento} 
+								handleItens = {this.handleItens.bind(this)}
 								handleLogout = {this.handleLogout.bind(this)}/>
 							)}
 					/>
@@ -160,8 +161,18 @@ export default class Routes extends Component {
 							)}
 					/>
 						
-				
-					
+					<Route 
+						path='/meus-itens' 
+						exact 
+						render={props => (
+							<MeusItens {... props} 
+								logged_in = {this.state.logged_in}
+								departamento={this.state.departamento}
+								produtos={this.state.produtos} 
+								handleItens = {this.handleItens.bind(this)}
+								handleLogout = {this.handleLogout.bind(this)}/>
+							)}
+					/>			
 				</Switch>
 	        </BrowserRouter>
     	);

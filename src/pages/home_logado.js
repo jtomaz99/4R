@@ -6,7 +6,7 @@ import logo from '../assets/logo.svg';
 
 export default class HomeLogado extends Component {
     constructor(props) {
-        super(props); 
+        super(props);  
         
 		this.handleLogoutClick = this.handleLogoutClick.bind(this);
 		this.handlePesquisarClick = this.handlePesquisarClick.bind(this);
