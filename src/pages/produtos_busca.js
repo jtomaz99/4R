@@ -41,6 +41,10 @@ export default class Home extends Component {
 
 	}
 
+	handlePesquisarClick(){
+		this.props.history.push(/search)
+	}
+
 	togglePopup() {  
         this.setState({  
 			showPopup: !this.state.showPopup
