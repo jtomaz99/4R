@@ -22,6 +22,12 @@ export default class Login extends Component {
 		
     }
 
+    componentDidMount(){
+        console.log(this.props.logged_in);
+        if (this.props.logged_in === 'logado')
+            this.props.history.push("/home");
+
+    }
 	loginSucesso(data){
 		this.props.handleLogin(data);
 		this.props.history.push("/home");
