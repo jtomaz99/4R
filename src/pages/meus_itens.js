@@ -119,6 +119,8 @@ export default class MeusItens extends Component {
 				</div>
 				</div>
             </div>
+            </div>
+           
         );
     }
 }
