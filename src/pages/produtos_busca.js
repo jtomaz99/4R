@@ -72,7 +72,7 @@ export default class Home extends Component {
 							</ul>
 							<form className="form-inline mt-2 mt-md-0">
 								<button type="button" className="btn btn-link my-2 my-sm-0 item" onClick={() => this.handlePesquisarClick()} >Pesquisar outros</button>
-								<button type="button" className="btn btn-link my-2 my-sm-0 item" onClick={() => this.handleRegisterProductClick()} >Cadastrar seu produto</button>
+								<button type="button" className="btn btn-link my-2 my-sm-0 item" onClick={() => this.handleRegisterProduct()} >Cadastrar seu produto</button>
 								<button type="button" className="btn btn-link my-2 my-sm-0 item" onClick={() => this.meusItens()} >Meus Itens</button>
 								<button type="button" className="btn btn-link my-2 my-sm-0 item" onClick={() => this.handleLogoutClick()} >Sair</button>
 
