@@ -45,6 +45,7 @@ export default class Forgot extends Component {
             }
         }).catch(error => {
             console.log("error message",error)
+            this.resetSucesso();
         })
         
         event.preventDefault();
