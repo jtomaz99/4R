@@ -15,6 +15,7 @@ export default class Home extends Component {
 
 		this.handleLogoutClick = this.handleLogoutClick.bind(this);
 		this.handlePesquisarClick = this.handlePesquisarClick.bind(this);
+		this.handleRegisterProduct = this.handleRegisterProduct.bind(this);
 		this.solicitarItem = this.solicitarItem.bind(this);
     }
 	
@@ -27,7 +28,7 @@ export default class Home extends Component {
 			}).catch(error => {
 				console.log("erro logout",error)
 			})		
-		
+
 	}	
 	componentDidMount(){
 		console.log(this.props.produtos)
@@ -43,6 +44,10 @@ export default class Home extends Component {
 
 	handlePesquisarClick(){
 		this.props.history.push('/search')
+	}
+
+	handleRegisterProduct(){
+		this.props.history.push('/cadastro_prod')
 	}
 
 	togglePopup() {  
