@@ -93,7 +93,7 @@ export default class Home extends Component {
 					{this.props.produtos.map((produto, index) => {
 						return  <div className="col-lg-4 col-md-6 mb-4">
 									<div className="card h-100">
-										<a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""/></a>
+										<a href="#"><img class="card-img-top" src={produto.imagem} alt=""/></a>
 										<div className="card-body">
 						  					<h4 className="card-title">{produto.nome_prod}</h4>
 											<h5>{produto.categoria}</h5>
